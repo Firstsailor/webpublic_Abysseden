@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Abysseden</title>
+	<style type="text/css">
+		@font-face {
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 200;
+    font-style: thin;}
+		@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;}
+    	@font-face {
+    font-family: 'Pretendard-Black';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: bold;}
+    	@font-face {
+    font-family: 'NotoSerifKR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff');
+    font-weight: 900;
+    font-style: bold;}
+
+    	@font-face {
+    font-family: 'MapoDacapo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDacapoA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+ 
+    	@font-face {
+    font-family: 'Arita-buri-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
+		body,h1,h2,h3,p,ul{margin: 0;padding: 0;}
+		body{background: url(back.png);
+					background-size: cover;}
+		h2{font-family: Arita-buri-SemiBold;font-size: 64px;line-height: 80px; padding-bottom: 20px;}
+		h3{font-family: font-family: 'Pretendard-bold';}
+		footer{background: #192567;}
+		p{margin: 5px 0px; font-family: 'Pretendard-Light';font-size: 14px;line-height: 22px;}
+		hr{border: none;
+		  border-top: 1px solid #FFBCAA;
+		  margin: 10px 0;}
+		img{width: 100%;}
+		.wrap{width: 1000px;color:#FFBCAA;margin: auto;padding: 40px;position: relative;}
+		.left-spacing{padding-left: 300px;}
+		.right-spacing{padding-right: 400px;}
+		.center-spacing{padding-left: 200px;padding-right: 200px;text-align: center;}
+		.white{background: white;padding: 10px;}
+		.white h2{color:#192567;}
+		.white p{color: #192567;}
+		.white h1{color: #192567;}
+		.blue{background: #192567;padding: 10px;}
+		.blue h2{color:#FFBCAA;}
+		.blue p{color: #FFBCAA;}
+		.blue h1{color: #FFBCAA;}
+		.flex{display: flex;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					margin: 5px;}
+		.flex-end{display: flex;
+		  justify-content: flex-end;}
+		.item-right {
+		  width: 200px;
+		  margin: 10px;}
+		.item200{width: 200px;
+			margin: 10px;}
+		.item {flex: 1;
+		  margin: 10px;}
+		.flex div h2{font-size: 30px;}
+		.flex div div{width: 100%;}
+		nav .menu{display: flex;
+					width: 400px;}
+		nav .menu li{width: 33.3%;
+					list-style-type: none;}
+		nav .menu li a{
+					text-align: center;
+					display: block;
+					text-decoration: none;
+					color:#FFBCAA;}
+		nav .menu li a:hover{background: #FFBCAA;
+					color: #192567;}
+		.menuflex{display:flex;
+					justify-content: space-between;}
+		.font-white{color: white;text-shadow: black 50%;}
+		ul{display: flex;}
+		div{display: block;}
+		img{background-size: cover;margin: 10px 0px; }
+		.row {height: 400px;
+				display: flex;
+				padding: 0px 5px;}
+		.small-subject{font-size:14px;
+						color: white
+						padding-top: 1%;}
+		.round{border-radius: 20px;}
+		.img-title{width: 800px;padding-left: 100px;}
+		.p-semititle{padding-left: 160px;margin-bottom: 20px;}
+		.p-source{font-family: 'Arita-buri-SemiBold';
+					font-weight: 100;
+					font-size: 10px;
+					padding: 5px 0px;}
+		.p-eng{font-family: 'Arita-buri-SemiBold';
+				font-weight: 100;
+				font-size: 14px;
+				height: 24px}
+		.p-news{font-size: 14px;
+				height: 24px;}
+		.h3-eng{font-family: 'Arita-buri-SemiBold';
+				font-weight: 100;
+				font-size: 14px;
+				height: 24px}
+		.div-300{width: 300px;}
+		.bg-white{background: white;padding: 5px;}
+		.bg-news{background-color: rgba(255, 255, 255, 0.1); padding: 5%;}
+		.h2-serif{font-family: Arita-buri-SemiBold;}
+		.width200{width: 200px;}
+		.width300{width: 300px;}
+		.width360{width: 360px;}
+		.width500{width: 500px;}
+		.width25{width: 25%;}
+		.item-left{align-items: left;}
+		.item-right{align-items: right;}
+		.item-center{align-items: center;}
+		.right{text-align: right;}
+		.center{text-align: center;}
+		.item-news{overflow: auto;
+				height: 400px;}
+		.toggle-sub{font-family: Arita-buri-SemiBold;font-size: 24px;text-align: center;}
+		.toggle-box{border: 1px solid #FFBCAA;padding: 0px;
+			margin: 10px 0px;width: 520px; height: 76px;text-align: center;}
+		.toggle-content {
+		  display: none; padding-top: 20px;padding-bottom: 30px;}
+		input:checked ~ .toggle-content {
+		  display: block;}
+		.toggle-inpot{display: none;}
+		.toggle-container {position: relative;}
+		.toggle-input {display: none;}
+		.toggle-label {display: block;cursor: pointer;}
+
+		.toggle-input:checked ~ .toggle-label .toggle-content {display: block;}
+
+		.radio-group {display: flex;}
+		.radio-box {
+		  position: relative;
+		  display: inline-block;
+		  width: 20px;
+		  height: 20px;
+		  margin-right: 10px;
+		  cursor: pointer;}
+		.radio-box input {
+		  position: absolute;
+		  opacity: 0;
+		  cursor: pointer;}
+		.checkmark {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 20px;
+		  height: 20px;
+		  background-color: #eee;}
+		.radio-box input:checked ~ .checkmark {
+		  background-color: #2196F3;}
+		.checkmark:after {
+		  content: "";
+		  position: absolute;
+		  display: none;}
+		.radio-box input:checked ~ .checkmark:after {
+		  display: block;}
+		.radio-box .checkmark:after {
+		  left: 7px;
+		  top: 3px;
+		  width: 5px;
+		  height: 10px;
+		  border: solid white;
+		  border-width: 0 2px 2px 0;
+		  transform: rotate(45deg);}
+		.content > div {display: none;}
+
+#rhizostomeae:checked ~ .content #rhizostomeae-content,
+#rhizostoma-pulmo:checked ~ .content #rhizostoma-pulmo-content,
+#phyllorhiza-punctata:checked ~ .content #phyllorhiza-punctata-content,
+#nemopilema-nomura:checked ~ .content #nemopilema-nomura-content,
+#chrysaora-hysoscella:checked ~ .content #chrysaora-hysoscella-content,
+#cassiopea-spp:checked ~ .content #cassiopea-spp-content {display: block;}
+		#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    animation: animStar 50s linear infinite;
+    box-shadow: 779px 1331px #fff, 324px 42px #fff, 303px 586px #fff,
+    1312px 276px #fff, 451px 625px #fff, 521px 1931px #fff, 1087px 1871px #fff,
+    36px 1546px #fff, 132px 934px #fff, 1698px 901px #fff, 1418px 664px #fff,
+    1448px 1157px #fff, 1084px 232px #fff, 347px 1776px #fff, 1722px 243px #fff,
+    1629px 835px #fff, 479px 969px #fff, 1231px 960px #fff, 586px 384px #fff,
+    164px 527px #fff, 8px 646px #fff, 1150px 1126px #fff, 665px 1357px #fff,
+    1556px 1982px #fff, 1260px 1961px #fff, 1675px 1741px #fff,
+    1843px 1514px #fff, 718px 1628px #fff, 242px 1343px #fff, 1497px 1880px #fff,
+    1364px 230px #fff, 1739px 1302px #fff, 636px 959px #fff, 304px 686px #fff,
+    614px 751px #fff, 1935px 816px #fff, 1428px 60px #fff, 355px 335px #fff,
+    1594px 158px #fff, 90px 60px #fff, 1553px 162px #fff, 1239px 1825px #fff,
+    1945px 587px #fff, 749px 1785px #fff, 1987px 1172px #fff, 1301px 1237px #fff,
+    1039px 342px #fff, 1585px 1481px #fff, 995px 1048px #fff, 524px 932px #fff,
+    214px 413px #fff, 1701px 1300px #fff, 1037px 1613px #fff, 1871px 996px #fff,
+    1360px 1635px #fff, 1110px 1313px #fff, 412px 1783px #fff, 1949px 177px #fff,
+    903px 1854px #fff, 700px 1936px #fff, 378px 125px #fff, 308px 834px #fff,
+    1118px 962px #fff, 1350px 1929px #fff, 781px 1811px #fff, 561px 137px #fff,
+    757px 1148px #fff, 1670px 1979px #fff, 343px 739px #fff, 945px 795px #fff,
+    576px 1903px #fff, 1078px 1436px #fff, 1583px 450px #fff, 1366px 474px #fff,
+    297px 1873px #fff, 192px 162px #fff, 1624px 1633px #fff, 59px 453px #fff,
+    82px 1872px #fff, 1933px 498px #fff, 1966px 1974px #fff, 1975px 1688px #fff,
+    779px 314px #fff, 1858px 1543px #fff, 73px 1507px #fff, 1693px 975px #fff,
+    1683px 108px #fff, 1768px 1654px #fff, 654px 14px #fff, 494px 171px #fff,
+    1689px 1895px #fff, 1660px 263px #fff, 1031px 903px #fff, 1203px 1393px #fff,
+    1333px 1421px #fff, 1113px 41px #fff, 1206px 1645px #fff, 1325px 1635px #fff,
+    142px 388px #fff, 572px 215px #fff, 1535px 296px #fff, 1419px 407px #fff,
+    1379px 1003px #fff, 329px 469px #fff, 1791px 1652px #fff, 935px 1802px #fff,
+    1330px 1820px #fff, 421px 1933px #fff, 828px 365px #fff, 275px 316px #fff,
+    707px 960px #fff, 1605px 1554px #fff, 625px 58px #fff, 717px 1697px #fff,
+    1669px 246px #fff, 1925px 322px #fff, 1154px 1803px #fff, 1929px 295px #fff,
+    1248px 240px #fff, 1045px 1755px #fff, 166px 942px #fff, 1888px 1773px #fff,
+    678px 1963px #fff, 1370px 569px #fff, 1974px 1400px #fff, 1786px 460px #fff,
+    51px 307px #fff, 784px 1400px #fff, 730px 1258px #fff, 1712px 393px #fff,
+    416px 170px #fff, 1797px 1932px #fff, 572px 219px #fff, 1557px 1856px #fff,
+    218px 8px #fff, 348px 1334px #fff, 469px 413px #fff, 385px 1738px #fff,
+    1357px 1818px #fff, 240px 942px #fff, 248px 1847px #fff, 1535px 806px #fff,
+    236px 1514px #fff, 1429px 1556px #fff, 73px 1633px #fff, 1398px 1121px #fff,
+    671px 1301px #fff, 1404px 1663px #fff, 740px 1018px #fff, 1600px 377px #fff,
+    785px 514px #fff, 112px 1084px #fff, 1915px 1887px #fff, 1463px 1848px #fff,
+    687px 1115px #fff, 1268px 1768px #fff, 1729px 1425px #fff,
+    1284px 1022px #fff, 801px 974px #fff, 1975px 1317px #fff, 1354px 834px #fff,
+    1446px 1484px #fff, 1283px 1786px #fff, 11px 523px #fff, 1842px 236px #fff,
+    1355px 654px #fff, 429px 7px #fff, 1033px 1128px #fff, 157px 297px #fff,
+    545px 635px #fff, 52px 1080px #fff, 827px 1520px #fff, 1121px 490px #fff,
+    9px 309px #fff, 1744px 1586px #fff, 1014px 417px #fff, 1534px 524px #fff,
+    958px 552px #fff, 1403px 1496px #fff, 387px 703px #fff, 1522px 548px #fff,
+    1355px 282px #fff, 1532px 601px #fff, 1838px 790px #fff, 290px 259px #fff,
+    295px 598px #fff, 1601px 539px #fff, 1561px 1272px #fff, 34px 1922px #fff,
+    1024px 543px #fff, 467px 369px #fff, 722px 333px #fff, 1976px 1255px #fff,
+    766px 983px #fff, 1582px 1285px #fff, 12px 512px #fff, 617px 1410px #fff,
+    682px 577px #fff, 1334px 1438px #fff, 439px 327px #fff, 1617px 1661px #fff,
+    673px 129px #fff, 794px 941px #fff, 1386px 1902px #fff, 37px 1353px #fff,
+    1467px 1353px #fff, 416px 18px #fff, 187px 344px #fff, 200px 1898px #fff,
+    1491px 1619px #fff, 811px 347px #fff, 924px 1827px #fff, 945px 217px #fff,
+    1735px 1228px #fff, 379px 1890px #fff, 79px 761px #fff, 825px 1837px #fff,
+    1980px 1558px #fff, 1308px 1573px #fff, 1488px 1726px #fff,
+    382px 1208px #fff, 522px 595px #fff, 1277px 1898px #fff, 354px 552px #fff,
+    161px 1784px #fff, 614px 251px #fff, 526px 1576px #fff, 17px 212px #fff,
+    179px 996px #fff, 467px 1208px #fff, 1944px 1838px #fff, 1140px 1093px #fff,
+    858px 1007px #fff, 200px 1064px #fff, 423px 1964px #fff, 1945px 439px #fff,
+    1377px 689px #fff, 1120px 1437px #fff, 1876px 668px #fff, 907px 1324px #fff,
+    343px 1976px #fff, 1816px 1501px #fff, 1849px 177px #fff, 647px 91px #fff,
+    1984px 1012px #fff, 1336px 1300px #fff, 128px 648px #fff, 305px 1060px #fff,
+    1324px 826px #fff, 1263px 1314px #fff, 1801px 629px #fff, 1614px 1555px #fff,
+    1634px 90px #fff, 1603px 452px #fff, 891px 1984px #fff, 1556px 1906px #fff,
+    121px 68px #fff, 1676px 1714px #fff, 516px 936px #fff, 1947px 1492px #fff,
+    1455px 1519px #fff, 45px 602px #fff, 205px 1039px #fff, 793px 172px #fff,
+    1562px 1739px #fff, 1056px 110px #fff, 1512px 379px #fff, 1795px 1621px #fff,
+    1848px 607px #fff, 262px 1719px #fff, 477px 991px #fff, 483px 883px #fff,
+    1239px 1197px #fff, 1496px 647px #fff, 1649px 25px #fff, 1491px 1946px #fff,
+    119px 996px #fff, 179px 1472px #fff, 1341px 808px #fff, 1565px 1700px #fff,
+    407px 1544px #fff, 1754px 357px #fff, 1288px 981px #fff, 902px 1997px #fff,
+    1755px 1668px #fff, 186px 877px #fff, 1202px 1882px #fff, 461px 1213px #fff,
+    1400px 748px #fff, 1969px 1899px #fff, 809px 522px #fff, 514px 1219px #fff,
+    374px 275px #fff, 938px 1973px #fff, 357px 552px #fff, 144px 1722px #fff,
+    1572px 912px #fff, 402px 1858px #fff, 1544px 1195px #fff, 667px 1257px #fff,
+    727px 1496px #fff, 993px 232px #fff, 1772px 313px #fff, 1040px 1590px #fff,
+    1204px 1973px #fff, 1268px 79px #fff, 1555px 1048px #fff, 986px 1707px #fff,
+    978px 1710px #fff, 713px 360px #fff, 407px 863px #fff, 461px 736px #fff,
+    284px 1608px #fff, 103px 430px #fff, 1283px 1319px #fff, 977px 1186px #fff,
+    1966px 1516px #fff, 1287px 1129px #fff, 70px 1098px #fff, 1189px 889px #fff,
+    1126px 1734px #fff, 309px 1292px #fff, 879px 764px #fff, 65px 473px #fff,
+    1003px 1959px #fff, 658px 791px #fff, 402px 1576px #fff, 35px 622px #fff,
+    529px 1589px #fff, 164px 666px #fff, 1876px 1290px #fff, 1541px 526px #fff,
+    270px 1297px #fff, 440px 865px #fff, 1500px 802px #fff, 182px 1754px #fff,
+    1264px 892px #fff, 272px 1249px #fff, 1289px 1535px #fff, 190px 1646px #fff,
+    955px 242px #fff, 1456px 1597px #fff, 1727px 1983px #fff, 635px 801px #fff,
+    226px 455px #fff, 1396px 1710px #fff, 849px 1863px #fff, 237px 1264px #fff,
+    839px 140px #fff, 1122px 735px #fff, 1280px 15px #fff, 1318px 242px #fff,
+    1819px 1148px #fff, 333px 1392px #fff, 1949px 553px #fff, 1878px 1332px #fff,
+    467px 548px #fff, 1812px 1082px #fff, 1067px 193px #fff, 243px 156px #fff,
+    483px 1616px #fff, 1714px 933px #fff, 759px 1800px #fff, 1822px 995px #fff,
+    1877px 572px #fff, 581px 1084px #fff, 107px 732px #fff, 642px 1837px #fff,
+    166px 1493px #fff, 1555px 198px #fff, 819px 307px #fff, 947px 345px #fff,
+    827px 224px #fff, 927px 1394px #fff, 540px 467px #fff, 1093px 405px #fff,
+    1140px 927px #fff, 130px 529px #fff, 33px 1980px #fff, 1147px 1663px #fff,
+    1616px 1436px #fff, 528px 710px #fff, 798px 1100px #fff, 505px 1480px #fff,
+    899px 641px #fff, 1909px 1949px #fff, 1311px 964px #fff, 979px 1301px #fff,
+    1393px 969px #fff, 1793px 1886px #fff, 292px 357px #fff, 1196px 1718px #fff,
+    1290px 1994px #fff, 537px 1973px #fff, 1181px 1674px #fff,
+    1740px 1566px #fff, 1307px 265px #fff, 922px 522px #fff, 1892px 472px #fff,
+    384px 1746px #fff, 392px 1098px #fff, 647px 548px #fff, 390px 1498px #fff,
+    1246px 138px #fff, 730px 876px #fff, 192px 1472px #fff, 1790px 1789px #fff,
+    928px 311px #fff, 1253px 1647px #fff, 747px 1921px #fff, 1561px 1025px #fff,
+    1533px 1292px #fff, 1985px 195px #fff, 728px 729px #fff, 1712px 1936px #fff,
+    512px 1717px #fff, 1528px 483px #fff, 313px 1642px #fff, 281px 1849px #fff,
+    1212px 799px #fff, 435px 1191px #fff, 1422px 611px #fff, 1718px 1964px #fff,
+    411px 944px #fff, 210px 636px #fff, 1502px 1295px #fff, 1434px 349px #fff,
+    769px 60px #fff, 747px 1053px #fff, 789px 504px #fff, 1436px 1264px #fff,
+    1893px 1225px #fff, 1394px 1788px #fff, 1108px 1317px #fff,
+    1673px 1395px #fff, 854px 1010px #fff, 1705px 80px #fff, 1858px 148px #fff,
+    1729px 344px #fff, 1388px 664px #fff, 895px 406px #fff, 1479px 157px #fff,
+    1441px 1157px #fff, 552px 1900px #fff, 516px 364px #fff, 1647px 189px #fff,
+    1427px 1071px #fff, 785px 729px #fff, 1080px 1710px #fff, 504px 204px #fff,
+    1177px 1622px #fff, 657px 34px #fff, 1296px 1099px #fff, 248px 180px #fff,
+    1212px 1568px #fff, 667px 1562px #fff, 695px 841px #fff, 1608px 1247px #fff,
+    751px 882px #fff, 87px 167px #fff, 607px 1368px #fff, 1363px 1203px #fff,
+    1836px 317px #fff, 1668px 1703px #fff, 830px 1154px #fff, 1721px 1398px #fff,
+    1601px 1280px #fff, 976px 874px #fff, 1743px 254px #fff, 1020px 1815px #fff,
+    1670px 1766px #fff, 1890px 735px #fff, 1379px 136px #fff, 1864px 695px #fff,
+    206px 965px #fff, 1404px 1932px #fff, 1923px 1360px #fff, 247px 682px #fff,
+    519px 1708px #fff, 645px 750px #fff, 1164px 1204px #fff, 834px 323px #fff,
+    172px 1350px #fff, 213px 972px #fff, 1837px 190px #fff, 285px 1806px #fff,
+    1047px 1299px #fff, 1548px 825px #fff, 1730px 324px #fff, 1346px 1909px #fff,
+    772px 270px #fff, 345px 1190px #fff, 478px 1433px #fff, 1479px 25px #fff,
+    1994px 1830px #fff, 1744px 732px #fff, 20px 1635px #fff, 690px 1795px #fff,
+    1594px 569px #fff, 579px 245px #fff, 1398px 733px #fff, 408px 1352px #fff,
+    1774px 120px #fff, 1152px 1370px #fff, 1698px 1810px #fff, 710px 1450px #fff,
+    665px 286px #fff, 493px 1720px #fff, 786px 5px #fff, 637px 1140px #fff,
+    764px 324px #fff, 927px 310px #fff, 938px 1424px #fff, 1884px 744px #fff,
+    913px 462px #fff, 1831px 1936px #fff, 1527px 249px #fff, 36px 1381px #fff,
+    1597px 581px #fff, 1530px 355px #fff, 949px 459px #fff, 799px 828px #fff,
+    242px 1471px #fff, 654px 797px #fff, 796px 594px #fff, 1365px 678px #fff,
+    752px 23px #fff, 1630px 541px #fff, 982px 72px #fff, 1733px 1831px #fff,
+    21px 412px #fff, 775px 998px #fff, 335px 1945px #fff, 264px 583px #fff,
+    158px 1311px #fff, 528px 164px #fff, 1978px 574px #fff, 717px 1203px #fff,
+    734px 1591px #fff, 1555px 820px #fff, 16px 1943px #fff, 1625px 1177px #fff,
+    1236px 690px #fff, 1585px 1590px #fff, 1737px 1728px #fff, 721px 698px #fff,
+    1804px 1186px #fff, 166px 980px #fff, 1850px 230px #fff, 330px 1712px #fff,
+    95px 797px #fff, 1948px 1078px #fff, 469px 939px #fff, 1269px 1899px #fff,
+    955px 1220px #fff, 1137px 1075px #fff, 312px 1293px #fff, 986px 1762px #fff,
+    1103px 1238px #fff, 428px 1993px #fff, 355px 570px #fff, 977px 1836px #fff,
+    1395px 1092px #fff, 276px 913px #fff, 1743px 656px #fff, 773px 502px #fff,
+    1686px 1322px #fff, 1516px 1945px #fff, 1334px 501px #fff, 266px 156px #fff,
+    455px 655px #fff, 798px 72px #fff, 1059px 1259px #fff, 1402px 1687px #fff,
+    236px 1329px #fff, 1455px 786px #fff, 146px 1228px #fff, 1851px 823px #fff,
+    1062px 100px #fff, 1220px 953px #fff, 20px 1826px #fff, 36px 1063px #fff,
+    1525px 338px #fff, 790px 1521px #fff, 741px 1099px #fff, 288px 1489px #fff,
+    700px 1060px #fff, 390px 1071px #fff, 411px 1036px #fff, 1853px 1072px #fff,
+    1446px 1085px #fff, 1164px 874px #fff, 924px 925px #fff, 291px 271px #fff,
+    1257px 1964px #fff, 1580px 1352px #fff, 1507px 1216px #fff, 211px 956px #fff,
+    985px 1195px #fff, 975px 1640px #fff, 518px 101px #fff, 663px 1395px #fff,
+    914px 532px #fff, 145px 1320px #fff, 69px 1397px #fff, 982px 523px #fff,
+    257px 725px #fff, 1599px 831px #fff, 1636px 1513px #fff, 1250px 1158px #fff,
+    1132px 604px #fff, 183px 102px #fff, 1057px 318px #fff, 1247px 1835px #fff,
+    1983px 1110px #fff, 1077px 1455px #fff, 921px 1770px #fff, 806px 1350px #fff,
+    1938px 1992px #fff, 855px 1260px #fff, 902px 1345px #fff, 658px 1908px #fff,
+    1845px 679px #fff, 712px 1482px #fff, 595px 950px #fff, 1784px 1992px #fff,
+    1847px 1785px #fff, 691px 1004px #fff, 175px 1179px #fff, 1666px 1911px #fff,
+    41px 61px #fff, 971px 1080px #fff, 1830px 1450px #fff, 1351px 1518px #fff,
+    1257px 99px #fff, 1395px 1498px #fff, 1117px 252px #fff, 1779px 597px #fff,
+    1346px 729px #fff, 1108px 1144px #fff, 402px 691px #fff, 72px 496px #fff,
+    1673px 1604px #fff, 1497px 974px #fff, 1865px 1664px #fff, 88px 806px #fff,
+    918px 77px #fff, 244px 1118px #fff, 256px 1820px #fff, 1851px 1840px #fff,
+    605px 1851px #fff, 634px 383px #fff, 865px 37px #fff, 943px 1024px #fff,
+    1951px 177px #fff, 1097px 523px #fff, 985px 1700px #fff, 1243px 122px #fff,
+    768px 1070px #fff, 468px 194px #fff, 320px 1867px #fff, 1850px 185px #fff,
+    380px 1616px #fff, 468px 1294px #fff, 1122px 1743px #fff, 884px 299px #fff,
+    1300px 1917px #fff, 1860px 396px #fff, 1270px 990px #fff, 529px 733px #fff,
+    1975px 1347px #fff, 1885px 685px #fff, 226px 506px #fff, 651px 878px #fff,
+    1323px 680px #fff, 1284px 680px #fff, 238px 1967px #fff, 911px 174px #fff,
+    1111px 521px #fff, 1150px 85px #fff, 794px 502px #fff, 484px 1856px #fff,
+    1809px 368px #fff, 112px 953px #fff, 590px 1009px #fff, 1655px 311px #fff,
+    100px 1026px #fff, 1803px 352px #fff, 865px 306px #fff, 1077px 1019px #fff,
+    1335px 872px #fff, 1647px 1298px #fff, 1233px 1387px #fff, 698px 1036px #fff,
+    659px 1860px #fff, 388px 1412px #fff, 1212px 458px #fff, 755px 1468px #fff,
+    696px 1654px #fff, 1144px 60px #fff;}
+
+		#stars:after {
+    content: '';
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 779px 1331px #fff, 324px 42px #fff, 303px 586px #fff,
+    1312px 276px #fff, 451px 625px #fff, 521px 1931px #fff, 1087px 1871px #fff,
+    36px 1546px #fff, 132px 934px #fff, 1698px 901px #fff, 1418px 664px #fff,
+    1448px 1157px #fff, 1084px 232px #fff, 347px 1776px #fff, 1722px 243px #fff,
+    1629px 835px #fff, 479px 969px #fff, 1231px 960px #fff, 586px 384px #fff,
+    164px 527px #fff, 8px 646px #fff, 1150px 1126px #fff, 665px 1357px #fff,
+    1556px 1982px #fff, 1260px 1961px #fff, 1675px 1741px #fff,
+    1843px 1514px #fff, 718px 1628px #fff, 242px 1343px #fff, 1497px 1880px #fff,
+    1364px 230px #fff, 1739px 1302px #fff, 636px 959px #fff, 304px 686px #fff,
+    614px 751px #fff, 1935px 816px #fff, 1428px 60px #fff, 355px 335px #fff,
+    1594px 158px #fff, 90px 60px #fff, 1553px 162px #fff, 1239px 1825px #fff,
+    1945px 587px #fff, 749px 1785px #fff, 1987px 1172px #fff, 1301px 1237px #fff,
+    1039px 342px #fff, 1585px 1481px #fff, 995px 1048px #fff, 524px 932px #fff,
+    214px 413px #fff, 1701px 1300px #fff, 1037px 1613px #fff, 1871px 996px #fff,
+    1360px 1635px #fff, 1110px 1313px #fff, 412px 1783px #fff, 1949px 177px #fff,
+    903px 1854px #fff, 700px 1936px #fff, 378px 125px #fff, 308px 834px #fff,
+    1118px 962px #fff, 1350px 1929px #fff, 781px 1811px #fff, 561px 137px #fff,
+    757px 1148px #fff, 1670px 1979px #fff, 343px 739px #fff, 945px 795px #fff,
+    576px 1903px #fff, 1078px 1436px #fff, 1583px 450px #fff, 1366px 474px #fff,
+    297px 1873px #fff, 192px 162px #fff, 1624px 1633px #fff, 59px 453px #fff,
+    82px 1872px #fff, 1933px 498px #fff, 1966px 1974px #fff, 1975px 1688px #fff,
+    779px 314px #fff, 1858px 1543px #fff, 73px 1507px #fff, 1693px 975px #fff,
+    1683px 108px #fff, 1768px 1654px #fff, 654px 14px #fff, 494px 171px #fff,
+    1689px 1895px #fff, 1660px 263px #fff, 1031px 903px #fff, 1203px 1393px #fff,
+    1333px 1421px #fff, 1113px 41px #fff, 1206px 1645px #fff, 1325px 1635px #fff,
+    142px 388px #fff, 572px 215px #fff, 1535px 296px #fff, 1419px 407px #fff,
+    1379px 1003px #fff, 329px 469px #fff, 1791px 1652px #fff, 935px 1802px #fff,
+    1330px 1820px #fff, 421px 1933px #fff, 828px 365px #fff, 275px 316px #fff,
+    707px 960px #fff, 1605px 1554px #fff, 625px 58px #fff, 717px 1697px #fff,
+    1669px 246px #fff, 1925px 322px #fff, 1154px 1803px #fff, 1929px 295px #fff,
+    1248px 240px #fff, 1045px 1755px #fff, 166px 942px #fff, 1888px 1773px #fff,
+    678px 1963px #fff, 1370px 569px #fff, 1974px 1400px #fff, 1786px 460px #fff,
+    51px 307px #fff, 784px 1400px #fff, 730px 1258px #fff, 1712px 393px #fff,
+    416px 170px #fff, 1797px 1932px #fff, 572px 219px #fff, 1557px 1856px #fff,
+    218px 8px #fff, 348px 1334px #fff, 469px 413px #fff, 385px 1738px #fff,
+    1357px 1818px #fff, 240px 942px #fff, 248px 1847px #fff, 1535px 806px #fff,
+    236px 1514px #fff, 1429px 1556px #fff, 73px 1633px #fff, 1398px 1121px #fff,
+    671px 1301px #fff, 1404px 1663px #fff, 740px 1018px #fff, 1600px 377px #fff,
+    785px 514px #fff, 112px 1084px #fff, 1915px 1887px #fff, 1463px 1848px #fff,
+    687px 1115px #fff, 1268px 1768px #fff, 1729px 1425px #fff,
+    1284px 1022px #fff, 801px 974px #fff, 1975px 1317px #fff, 1354px 834px #fff,
+    1446px 1484px #fff, 1283px 1786px #fff, 11px 523px #fff, 1842px 236px #fff,
+    1355px 654px #fff, 429px 7px #fff, 1033px 1128px #fff, 157px 297px #fff,
+    545px 635px #fff, 52px 1080px #fff, 827px 1520px #fff, 1121px 490px #fff,
+    9px 309px #fff, 1744px 1586px #fff, 1014px 417px #fff, 1534px 524px #fff,
+    958px 552px #fff, 1403px 1496px #fff, 387px 703px #fff, 1522px 548px #fff,
+    1355px 282px #fff, 1532px 601px #fff, 1838px 790px #fff, 290px 259px #fff,
+    295px 598px #fff, 1601px 539px #fff, 1561px 1272px #fff, 34px 1922px #fff,
+    1024px 543px #fff, 467px 369px #fff, 722px 333px #fff, 1976px 1255px #fff,
+    766px 983px #fff, 1582px 1285px #fff, 12px 512px #fff, 617px 1410px #fff,
+    682px 577px #fff, 1334px 1438px #fff, 439px 327px #fff, 1617px 1661px #fff,
+    673px 129px #fff, 794px 941px #fff, 1386px 1902px #fff, 37px 1353px #fff,
+    1467px 1353px #fff, 416px 18px #fff, 187px 344px #fff, 200px 1898px #fff,
+    1491px 1619px #fff, 811px 347px #fff, 924px 1827px #fff, 945px 217px #fff,
+    1735px 1228px #fff, 379px 1890px #fff, 79px 761px #fff, 825px 1837px #fff,
+    1980px 1558px #fff, 1308px 1573px #fff, 1488px 1726px #fff,
+    382px 1208px #fff, 522px 595px #fff, 1277px 1898px #fff, 354px 552px #fff,
+    161px 1784px #fff, 614px 251px #fff, 526px 1576px #fff, 17px 212px #fff,
+    179px 996px #fff, 467px 1208px #fff, 1944px 1838px #fff, 1140px 1093px #fff,
+    858px 1007px #fff, 200px 1064px #fff, 423px 1964px #fff, 1945px 439px #fff,
+    1377px 689px #fff, 1120px 1437px #fff, 1876px 668px #fff, 907px 1324px #fff,
+    343px 1976px #fff, 1816px 1501px #fff, 1849px 177px #fff, 647px 91px #fff,
+    1984px 1012px #fff, 1336px 1300px #fff, 128px 648px #fff, 305px 1060px #fff,
+    1324px 826px #fff, 1263px 1314px #fff, 1801px 629px #fff, 1614px 1555px #fff,
+    1634px 90px #fff, 1603px 452px #fff, 891px 1984px #fff, 1556px 1906px #fff,
+    121px 68px #fff, 1676px 1714px #fff, 516px 936px #fff, 1947px 1492px #fff,
+    1455px 1519px #fff, 45px 602px #fff, 205px 1039px #fff, 793px 172px #fff,
+    1562px 1739px #fff, 1056px 110px #fff, 1512px 379px #fff, 1795px 1621px #fff,
+    1848px 607px #fff, 262px 1719px #fff, 477px 991px #fff, 483px 883px #fff,
+    1239px 1197px #fff, 1496px 647px #fff, 1649px 25px #fff, 1491px 1946px #fff,
+    119px 996px #fff, 179px 1472px #fff, 1341px 808px #fff, 1565px 1700px #fff,
+    407px 1544px #fff, 1754px 357px #fff, 1288px 981px #fff, 902px 1997px #fff,
+    1755px 1668px #fff, 186px 877px #fff, 1202px 1882px #fff, 461px 1213px #fff,
+    1400px 748px #fff, 1969px 1899px #fff, 809px 522px #fff, 514px 1219px #fff,
+    374px 275px #fff, 938px 1973px #fff, 357px 552px #fff, 144px 1722px #fff,
+    1572px 912px #fff, 402px 1858px #fff, 1544px 1195px #fff, 667px 1257px #fff,
+    727px 1496px #fff, 993px 232px #fff, 1772px 313px #fff, 1040px 1590px #fff,
+    1204px 1973px #fff, 1268px 79px #fff, 1555px 1048px #fff, 986px 1707px #fff,
+    978px 1710px #fff, 713px 360px #fff, 407px 863px #fff, 461px 736px #fff,
+    284px 1608px #fff, 103px 430px #fff, 1283px 1319px #fff, 977px 1186px #fff,
+    1966px 1516px #fff, 1287px 1129px #fff, 70px 1098px #fff, 1189px 889px #fff,
+    1126px 1734px #fff, 309px 1292px #fff, 879px 764px #fff, 65px 473px #fff,
+    1003px 1959px #fff, 658px 791px #fff, 402px 1576px #fff, 35px 622px #fff,
+    529px 1589px #fff, 164px 666px #fff, 1876px 1290px #fff, 1541px 526px #fff,
+    270px 1297px #fff, 440px 865px #fff, 1500px 802px #fff, 182px 1754px #fff,
+    1264px 892px #fff, 272px 1249px #fff, 1289px 1535px #fff, 190px 1646px #fff,
+    955px 242px #fff, 1456px 1597px #fff, 1727px 1983px #fff, 635px 801px #fff,
+    226px 455px #fff, 1396px 1710px #fff, 849px 1863px #fff, 237px 1264px #fff,
+    839px 140px #fff, 1122px 735px #fff, 1280px 15px #fff, 1318px 242px #fff,
+    1819px 1148px #fff, 333px 1392px #fff, 1949px 553px #fff, 1878px 1332px #fff,
+    467px 548px #fff, 1812px 1082px #fff, 1067px 193px #fff, 243px 156px #fff,
+    483px 1616px #fff, 1714px 933px #fff, 759px 1800px #fff, 1822px 995px #fff,
+    1877px 572px #fff, 581px 1084px #fff, 107px 732px #fff, 642px 1837px #fff,
+    166px 1493px #fff, 1555px 198px #fff, 819px 307px #fff, 947px 345px #fff,
+    827px 224px #fff, 927px 1394px #fff, 540px 467px #fff, 1093px 405px #fff,
+    1140px 927px #fff, 130px 529px #fff, 33px 1980px #fff, 1147px 1663px #fff,
+    1616px 1436px #fff, 528px 710px #fff, 798px 1100px #fff, 505px 1480px #fff,
+    899px 641px #fff, 1909px 1949px #fff, 1311px 964px #fff, 979px 1301px #fff,
+    1393px 969px #fff, 1793px 1886px #fff, 292px 357px #fff, 1196px 1718px #fff,
+    1290px 1994px #fff, 537px 1973px #fff, 1181px 1674px #fff,
+    1740px 1566px #fff, 1307px 265px #fff, 922px 522px #fff, 1892px 472px #fff,
+    384px 1746px #fff, 392px 1098px #fff, 647px 548px #fff, 390px 1498px #fff,
+    1246px 138px #fff, 730px 876px #fff, 192px 1472px #fff, 1790px 1789px #fff,
+    928px 311px #fff, 1253px 1647px #fff, 747px 1921px #fff, 1561px 1025px #fff,
+    1533px 1292px #fff, 1985px 195px #fff, 728px 729px #fff, 1712px 1936px #fff,
+    512px 1717px #fff, 1528px 483px #fff, 313px 1642px #fff, 281px 1849px #fff,
+    1212px 799px #fff, 435px 1191px #fff, 1422px 611px #fff, 1718px 1964px #fff,
+    411px 944px #fff, 210px 636px #fff, 1502px 1295px #fff, 1434px 349px #fff,
+    769px 60px #fff, 747px 1053px #fff, 789px 504px #fff, 1436px 1264px #fff,
+    1893px 1225px #fff, 1394px 1788px #fff, 1108px 1317px #fff,
+    1673px 1395px #fff, 854px 1010px #fff, 1705px 80px #fff, 1858px 148px #fff,
+    1729px 344px #fff, 1388px 664px #fff, 895px 406px #fff, 1479px 157px #fff,
+    1441px 1157px #fff, 552px 1900px #fff, 516px 364px #fff, 1647px 189px #fff,
+    1427px 1071px #fff, 785px 729px #fff, 1080px 1710px #fff, 504px 204px #fff,
+    1177px 1622px #fff, 657px 34px #fff, 1296px 1099px #fff, 248px 180px #fff,
+    1212px 1568px #fff, 667px 1562px #fff, 695px 841px #fff, 1608px 1247px #fff,
+    751px 882px #fff, 87px 167px #fff, 607px 1368px #fff, 1363px 1203px #fff,
+    1836px 317px #fff, 1668px 1703px #fff, 830px 1154px #fff, 1721px 1398px #fff,
+    1601px 1280px #fff, 976px 874px #fff, 1743px 254px #fff, 1020px 1815px #fff,
+    1670px 1766px #fff, 1890px 735px #fff, 1379px 136px #fff, 1864px 695px #fff,
+    206px 965px #fff, 1404px 1932px #fff, 1923px 1360px #fff, 247px 682px #fff,
+    519px 1708px #fff, 645px 750px #fff, 1164px 1204px #fff, 834px 323px #fff,
+    172px 1350px #fff, 213px 972px #fff, 1837px 190px #fff, 285px 1806px #fff,
+    1047px 1299px #fff, 1548px 825px #fff, 1730px 324px #fff, 1346px 1909px #fff,
+    772px 270px #fff, 345px 1190px #fff, 478px 1433px #fff, 1479px 25px #fff,
+    1994px 1830px #fff, 1744px 732px #fff, 20px 1635px #fff, 690px 1795px #fff,
+    1594px 569px #fff, 579px 245px #fff, 1398px 733px #fff, 408px 1352px #fff,
+    1774px 120px #fff, 1152px 1370px #fff, 1698px 1810px #fff, 710px 1450px #fff,
+    665px 286px #fff, 493px 1720px #fff, 786px 5px #fff, 637px 1140px #fff,
+    764px 324px #fff, 927px 310px #fff, 938px 1424px #fff, 1884px 744px #fff,
+    913px 462px #fff, 1831px 1936px #fff, 1527px 249px #fff, 36px 1381px #fff,
+    1597px 581px #fff, 1530px 355px #fff, 949px 459px #fff, 799px 828px #fff,
+    242px 1471px #fff, 654px 797px #fff, 796px 594px #fff, 1365px 678px #fff,
+    752px 23px #fff, 1630px 541px #fff, 982px 72px #fff, 1733px 1831px #fff,
+    21px 412px #fff, 775px 998px #fff, 335px 1945px #fff, 264px 583px #fff,
+    158px 1311px #fff, 528px 164px #fff, 1978px 574px #fff, 717px 1203px #fff,
+    734px 1591px #fff, 1555px 820px #fff, 16px 1943px #fff, 1625px 1177px #fff,
+    1236px 690px #fff, 1585px 1590px #fff, 1737px 1728px #fff, 721px 698px #fff,
+    1804px 1186px #fff, 166px 980px #fff, 1850px 230px #fff, 330px 1712px #fff,
+    95px 797px #fff, 1948px 1078px #fff, 469px 939px #fff, 1269px 1899px #fff,
+    955px 1220px #fff, 1137px 1075px #fff, 312px 1293px #fff, 986px 1762px #fff,
+    1103px 1238px #fff, 428px 1993px #fff, 355px 570px #fff, 977px 1836px #fff,
+    1395px 1092px #fff, 276px 913px #fff, 1743px 656px #fff, 773px 502px #fff,
+    1686px 1322px #fff, 1516px 1945px #fff, 1334px 501px #fff, 266px 156px #fff,
+    455px 655px #fff, 798px 72px #fff, 1059px 1259px #fff, 1402px 1687px #fff,
+    236px 1329px #fff, 1455px 786px #fff, 146px 1228px #fff, 1851px 823px #fff,
+    1062px 100px #fff, 1220px 953px #fff, 20px 1826px #fff, 36px 1063px #fff,
+    1525px 338px #fff, 790px 1521px #fff, 741px 1099px #fff, 288px 1489px #fff,
+    700px 1060px #fff, 390px 1071px #fff, 411px 1036px #fff, 1853px 1072px #fff,
+    1446px 1085px #fff, 1164px 874px #fff, 924px 925px #fff, 291px 271px #fff,
+    1257px 1964px #fff, 1580px 1352px #fff, 1507px 1216px #fff, 211px 956px #fff,
+    985px 1195px #fff, 975px 1640px #fff, 518px 101px #fff, 663px 1395px #fff,
+    914px 532px #fff, 145px 1320px #fff, 69px 1397px #fff, 982px 523px #fff,
+    257px 725px #fff, 1599px 831px #fff, 1636px 1513px #fff, 1250px 1158px #fff,
+    1132px 604px #fff, 183px 102px #fff, 1057px 318px #fff, 1247px 1835px #fff,
+    1983px 1110px #fff, 1077px 1455px #fff, 921px 1770px #fff, 806px 1350px #fff,
+    1938px 1992px #fff, 855px 1260px #fff, 902px 1345px #fff, 658px 1908px #fff,
+    1845px 679px #fff, 712px 1482px #fff, 595px 950px #fff, 1784px 1992px #fff,
+    1847px 1785px #fff, 691px 1004px #fff, 175px 1179px #fff, 1666px 1911px #fff,
+    41px 61px #fff, 971px 1080px #fff, 1830px 1450px #fff, 1351px 1518px #fff,
+    1257px 99px #fff, 1395px 1498px #fff, 1117px 252px #fff, 1779px 597px #fff,
+    1346px 729px #fff, 1108px 1144px #fff, 402px 691px #fff, 72px 496px #fff,
+    1673px 1604px #fff, 1497px 974px #fff, 1865px 1664px #fff, 88px 806px #fff,
+    918px 77px #fff, 244px 1118px #fff, 256px 1820px #fff, 1851px 1840px #fff,
+    605px 1851px #fff, 634px 383px #fff, 865px 37px #fff, 943px 1024px #fff,
+    1951px 177px #fff, 1097px 523px #fff, 985px 1700px #fff, 1243px 122px #fff,
+    768px 1070px #fff, 468px 194px #fff, 320px 1867px #fff, 1850px 185px #fff,
+    380px 1616px #fff, 468px 1294px #fff, 1122px 1743px #fff, 884px 299px #fff,
+    1300px 1917px #fff, 1860px 396px #fff, 1270px 990px #fff, 529px 733px #fff,
+    1975px 1347px #fff, 1885px 685px #fff, 226px 506px #fff, 651px 878px #fff,
+    1323px 680px #fff, 1284px 680px #fff, 238px 1967px #fff, 911px 174px #fff,
+    1111px 521px #fff, 1150px 85px #fff, 794px 502px #fff, 484px 1856px #fff,
+    1809px 368px #fff, 112px 953px #fff, 590px 1009px #fff, 1655px 311px #fff,
+    100px 1026px #fff, 1803px 352px #fff, 865px 306px #fff, 1077px 1019px #fff,
+    1335px 872px #fff, 1647px 1298px #fff, 1233px 1387px #fff, 698px 1036px #fff,
+    659px 1860px #fff, 388px 1412px #fff, 1212px 458px #fff, 755px 1468px #fff,
+    696px 1654px #fff, 1144px 60px #fff;}
+
+		#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    animation: animStar 100s linear infinite;
+    box-shadow: 1448px 320px #fff, 1775px 1663px #fff, 332px 1364px #fff,
+    878px 340px #fff, 569px 1832px #fff, 1422px 1684px #fff, 1946px 1907px #fff,
+    121px 979px #fff, 1044px 1069px #fff, 463px 381px #fff, 423px 112px #fff,
+    523px 1179px #fff, 779px 654px #fff, 1398px 694px #fff, 1085px 1464px #fff,
+    1599px 1869px #fff, 801px 1882px #fff, 779px 1231px #fff, 552px 932px #fff,
+    1057px 1196px #fff, 282px 1280px #fff, 496px 1986px #fff, 1833px 1120px #fff,
+    1802px 1293px #fff, 6px 1696px #fff, 412px 1902px #fff, 605px 438px #fff,
+    24px 1212px #fff, 234px 1320px #fff, 544px 344px #fff, 1107px 170px #fff,
+    1603px 196px #fff, 905px 648px #fff, 68px 1458px #fff, 649px 1969px #fff,
+    744px 675px #fff, 1127px 478px #fff, 714px 1814px #fff, 1486px 526px #fff,
+    270px 1636px #fff, 1931px 149px #fff, 1807px 378px #fff, 8px 390px #fff,
+    1415px 699px #fff, 1473px 1211px #fff, 1590px 141px #fff, 270px 1705px #fff,
+    69px 1423px #fff, 1108px 1053px #fff, 1946px 128px #fff, 371px 371px #fff,
+    1490px 220px #fff, 357px 1885px #fff, 363px 363px #fff, 1896px 1256px #fff,
+    1979px 1050px #fff, 947px 1342px #fff, 1754px 242px #fff, 514px 974px #fff,
+    65px 1477px #fff, 1840px 547px #fff, 950px 695px #fff, 459px 1150px #fff,
+    1124px 1502px #fff, 481px 940px #fff, 680px 839px #fff, 797px 1169px #fff,
+    1977px 1491px #fff, 734px 1724px #fff, 210px 298px #fff, 816px 628px #fff,
+    686px 770px #fff, 1721px 267px #fff, 1663px 511px #fff, 1481px 1141px #fff,
+    582px 248px #fff, 1308px 953px #fff, 628px 657px #fff, 897px 1535px #fff,
+    270px 931px #fff, 791px 467px #fff, 1336px 1732px #fff, 1013px 1653px #fff,
+    1911px 956px #fff, 587px 816px #fff, 83px 456px #fff, 930px 1478px #fff,
+    1587px 1694px #fff, 614px 1200px #fff, 302px 1782px #fff, 1711px 1432px #fff,
+    443px 904px #fff, 1666px 714px #fff, 1588px 1167px #fff, 273px 1075px #fff,
+    1679px 461px #fff, 721px 664px #fff, 1202px 10px #fff, 166px 1126px #fff,
+    331px 1628px #fff, 430px 1565px #fff, 1585px 509px #fff, 640px 38px #fff,
+    822px 837px #fff, 1760px 1664px #fff, 1122px 1458px #fff, 398px 131px #fff,
+    689px 285px #fff, 460px 652px #fff, 1627px 365px #fff, 348px 1648px #fff,
+    819px 1946px #fff, 981px 1917px #fff, 323px 76px #fff, 979px 684px #fff,
+    887px 536px #fff, 1348px 1596px #fff, 1055px 666px #fff, 1402px 1797px #fff,
+    1300px 1055px #fff, 937px 238px #fff, 1474px 1815px #fff, 1144px 1710px #fff,
+    1629px 1087px #fff, 911px 919px #fff, 771px 819px #fff, 403px 720px #fff,
+    163px 736px #fff, 1062px 238px #fff, 1774px 818px #fff, 1874px 1178px #fff,
+    1177px 699px #fff, 1244px 1244px #fff, 1371px 58px #fff, 564px 1515px #fff,
+    1824px 487px #fff, 929px 702px #fff, 394px 1348px #fff, 1161px 641px #fff,
+    219px 1841px #fff, 358px 941px #fff, 140px 1759px #fff, 1019px 1345px #fff,
+    274px 436px #fff, 1433px 1605px #fff, 1798px 1426px #fff, 294px 1848px #fff,
+    1681px 1877px #fff, 1344px 1824px #fff, 1439px 1632px #fff,
+    161px 1012px #fff, 1308px 588px #fff, 1789px 582px #fff, 721px 1910px #fff,
+    318px 218px #fff, 607px 319px #fff, 495px 535px #fff, 1552px 1575px #fff,
+    1562px 67px #fff, 403px 926px #fff, 1096px 1800px #fff, 1814px 1709px #fff,
+    1882px 1831px #fff, 533px 46px #fff, 823px 969px #fff, 530px 165px #fff,
+    1030px 352px #fff, 1681px 313px #fff, 338px 115px #fff, 1607px 211px #fff,
+    1718px 1184px #fff, 1589px 659px #fff, 278px 355px #fff, 464px 1464px #fff,
+    1165px 277px #fff, 950px 694px #fff, 1746px 293px #fff, 793px 911px #fff,
+    528px 773px #fff, 1883px 1694px #fff, 748px 182px #fff, 1924px 1531px #fff,
+    100px 636px #fff, 1473px 1445px #fff, 1264px 1244px #fff, 850px 1377px #fff,
+    987px 1976px #fff, 933px 1761px #fff, 922px 1270px #fff, 500px 396px #fff,
+    1324px 8px #fff, 1967px 1814px #fff, 1072px 1401px #fff, 961px 37px #fff,
+    156px 81px #fff, 1915px 502px #fff, 1076px 1846px #fff, 152px 1669px #fff,
+    986px 1529px #fff, 1667px 1137px #fff;}
+
+		#stars2:after {
+    content: '';
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 1448px 320px #fff, 1775px 1663px #fff, 332px 1364px #fff,
+    878px 340px #fff, 569px 1832px #fff, 1422px 1684px #fff, 1946px 1907px #fff,
+    121px 979px #fff, 1044px 1069px #fff, 463px 381px #fff, 423px 112px #fff,
+    523px 1179px #fff, 779px 654px #fff, 1398px 694px #fff, 1085px 1464px #fff,
+    1599px 1869px #fff, 801px 1882px #fff, 779px 1231px #fff, 552px 932px #fff,
+    1057px 1196px #fff, 282px 1280px #fff, 496px 1986px #fff, 1833px 1120px #fff,
+    1802px 1293px #fff, 6px 1696px #fff, 412px 1902px #fff, 605px 438px #fff,
+    24px 1212px #fff, 234px 1320px #fff, 544px 344px #fff, 1107px 170px #fff,
+    1603px 196px #fff, 905px 648px #fff, 68px 1458px #fff, 649px 1969px #fff,
+    744px 675px #fff, 1127px 478px #fff, 714px 1814px #fff, 1486px 526px #fff,
+    270px 1636px #fff, 1931px 149px #fff, 1807px 378px #fff, 8px 390px #fff,
+    1415px 699px #fff, 1473px 1211px #fff, 1590px 141px #fff, 270px 1705px #fff,
+    69px 1423px #fff, 1108px 1053px #fff, 1946px 128px #fff, 371px 371px #fff,
+    1490px 220px #fff, 357px 1885px #fff, 363px 363px #fff, 1896px 1256px #fff,
+    1979px 1050px #fff, 947px 1342px #fff, 1754px 242px #fff, 514px 974px #fff,
+    65px 1477px #fff, 1840px 547px #fff, 950px 695px #fff, 459px 1150px #fff,
+    1124px 1502px #fff, 481px 940px #fff, 680px 839px #fff, 797px 1169px #fff,
+    1977px 1491px #fff, 734px 1724px #fff, 210px 298px #fff, 816px 628px #fff,
+    686px 770px #fff, 1721px 267px #fff, 1663px 511px #fff, 1481px 1141px #fff,
+    582px 248px #fff, 1308px 953px #fff, 628px 657px #fff, 897px 1535px #fff,
+    270px 931px #fff, 791px 467px #fff, 1336px 1732px #fff, 1013px 1653px #fff,
+    1911px 956px #fff, 587px 816px #fff, 83px 456px #fff, 930px 1478px #fff,
+    1587px 1694px #fff, 614px 1200px #fff, 302px 1782px #fff, 1711px 1432px #fff,
+    443px 904px #fff, 1666px 714px #fff, 1588px 1167px #fff, 273px 1075px #fff,
+    1679px 461px #fff, 721px 664px #fff, 1202px 10px #fff, 166px 1126px #fff,
+    331px 1628px #fff, 430px 1565px #fff, 1585px 509px #fff, 640px 38px #fff,
+    822px 837px #fff, 1760px 1664px #fff, 1122px 1458px #fff, 398px 131px #fff,
+    689px 285px #fff, 460px 652px #fff, 1627px 365px #fff, 348px 1648px #fff,
+    819px 1946px #fff, 981px 1917px #fff, 323px 76px #fff, 979px 684px #fff,
+    887px 536px #fff, 1348px 1596px #fff, 1055px 666px #fff, 1402px 1797px #fff,
+    1300px 1055px #fff, 937px 238px #fff, 1474px 1815px #fff, 1144px 1710px #fff,
+    1629px 1087px #fff, 911px 919px #fff, 771px 819px #fff, 403px 720px #fff,
+    163px 736px #fff, 1062px 238px #fff, 1774px 818px #fff, 1874px 1178px #fff,
+    1177px 699px #fff, 1244px 1244px #fff, 1371px 58px #fff, 564px 1515px #fff,
+    1824px 487px #fff, 929px 702px #fff, 394px 1348px #fff, 1161px 641px #fff,
+    219px 1841px #fff, 358px 941px #fff, 140px 1759px #fff, 1019px 1345px #fff,
+    274px 436px #fff, 1433px 1605px #fff, 1798px 1426px #fff, 294px 1848px #fff,
+    1681px 1877px #fff, 1344px 1824px #fff, 1439px 1632px #fff,
+    161px 1012px #fff, 1308px 588px #fff, 1789px 582px #fff, 721px 1910px #fff,
+    318px 218px #fff, 607px 319px #fff, 495px 535px #fff, 1552px 1575px #fff,
+    1562px 67px #fff, 403px 926px #fff, 1096px 1800px #fff, 1814px 1709px #fff,
+    1882px 1831px #fff, 533px 46px #fff, 823px 969px #fff, 530px 165px #fff,
+    1030px 352px #fff, 1681px 313px #fff, 338px 115px #fff, 1607px 211px #fff,
+    1718px 1184px #fff, 1589px 659px #fff, 278px 355px #fff, 464px 1464px #fff,
+    1165px 277px #fff, 950px 694px #fff, 1746px 293px #fff, 793px 911px #fff,
+    528px 773px #fff, 1883px 1694px #fff, 748px 182px #fff, 1924px 1531px #fff,
+    100px 636px #fff, 1473px 1445px #fff, 1264px 1244px #fff, 850px 1377px #fff,
+    987px 1976px #fff, 933px 1761px #fff, 922px 1270px #fff, 500px 396px #fff,
+    1324px 8px #fff, 1967px 1814px #fff, 1072px 1401px #fff, 961px 37px #fff,
+    156px 81px #fff, 1915px 502px #fff, 1076px 1846px #fff, 152px 1669px #fff,
+    986px 1529px #fff, 1667px 1137px #fff;}
+
+		#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    animation: animStar 150s linear infinte;
+    box-shadow: 387px 1878px #fff, 760px 1564px #fff, 1487px 999px #fff,
+    948px 1828px #fff, 1977px 1001px #fff, 1284px 1963px #fff, 656px 284px #fff,
+    1268px 1635px #fff, 1820px 598px #fff, 642px 1900px #fff, 296px 57px #fff,
+    921px 1620px #fff, 476px 1858px #fff, 658px 613px #fff, 1171px 1363px #fff,
+    1419px 283px #fff, 1037px 731px #fff, 503px 663px #fff, 1562px 463px #fff,
+    383px 1197px #fff, 1171px 1233px #fff, 876px 1768px #fff, 856px 1615px #fff,
+    1375px 1924px #fff, 1725px 918px #fff, 952px 119px #fff, 768px 1212px #fff,
+    992px 1462px #fff, 1929px 717px #fff, 1947px 755px #fff, 1818px 1123px #fff,
+    1896px 1672px #fff, 460px 198px #fff, 256px 271px #fff, 752px 544px #fff,
+    1222px 1859px #fff, 1851px 443px #fff, 313px 1858px #fff, 709px 446px #fff,
+    1546px 697px #fff, 674px 1155px #fff, 1112px 130px #fff, 355px 1790px #fff,
+    1496px 974px #fff, 1696px 480px #fff, 1316px 1265px #fff, 1645px 1063px #fff,
+    1182px 237px #fff, 427px 1582px #fff, 859px 253px #fff, 458px 939px #fff,
+    1517px 1644px #fff, 1943px 60px #fff, 212px 1650px #fff, 966px 1786px #fff,
+    473px 712px #fff, 130px 76px #fff, 1417px 1186px #fff, 909px 1580px #fff,
+    1913px 762px #fff, 204px 1143px #fff, 1998px 1057px #fff, 1468px 1301px #fff,
+    144px 1676px #fff, 21px 1601px #fff, 382px 1362px #fff, 912px 753px #fff,
+    1488px 1405px #fff, 802px 156px #fff, 174px 550px #fff, 338px 1366px #fff,
+    1197px 774px #fff, 602px 486px #fff, 682px 1877px #fff, 348px 1503px #fff,
+    407px 1139px #fff, 950px 1400px #fff, 922px 1139px #fff, 1697px 293px #fff,
+    1238px 1281px #fff, 1038px 1197px #fff, 376px 1889px #fff,
+    1255px 1680px #fff, 1008px 1316px #fff, 1538px 1447px #fff,
+    1186px 874px #fff, 1967px 640px #fff, 1341px 19px #fff, 29px 1732px #fff,
+    16px 1650px #fff, 1021px 1075px #fff, 723px 424px #fff, 1175px 41px #fff,
+    494px 1957px #fff, 1296px 431px #fff, 175px 1507px #fff, 831px 121px #fff,
+    498px 1947px #fff, 617px 880px #fff, 240px 403px #fff;}
+
+		#stars3:after {
+    content: '';
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 387px 1878px #fff, 760px 1564px #fff, 1487px 999px #fff,
+    948px 1828px #fff, 1977px 1001px #fff, 1284px 1963px #fff, 656px 284px #fff,
+    1268px 1635px #fff, 1820px 598px #fff, 642px 1900px #fff, 296px 57px #fff,
+    921px 1620px #fff, 476px 1858px #fff, 658px 613px #fff, 1171px 1363px #fff,
+    1419px 283px #fff, 1037px 731px #fff, 503px 663px #fff, 1562px 463px #fff,
+    383px 1197px #fff, 1171px 1233px #fff, 876px 1768px #fff, 856px 1615px #fff,
+    1375px 1924px #fff, 1725px 918px #fff, 952px 119px #fff, 768px 1212px #fff,
+    992px 1462px #fff, 1929px 717px #fff, 1947px 755px #fff, 1818px 1123px #fff,
+    1896px 1672px #fff, 460px 198px #fff, 256px 271px #fff, 752px 544px #fff,
+    1222px 1859px #fff, 1851px 443px #fff, 313px 1858px #fff, 709px 446px #fff,
+    1546px 697px #fff, 674px 1155px #fff, 1112px 130px #fff, 355px 1790px #fff,
+    1496px 974px #fff, 1696px 480px #fff, 1316px 1265px #fff, 1645px 1063px #fff,
+    1182px 237px #fff, 427px 1582px #fff, 859px 253px #fff, 458px 939px #fff,
+    1517px 1644px #fff, 1943px 60px #fff, 212px 1650px #fff, 966px 1786px #fff,
+    473px 712px #fff, 130px 76px #fff, 1417px 1186px #fff, 909px 1580px #fff,
+    1913px 762px #fff, 204px 1143px #fff, 1998px 1057px #fff, 1468px 1301px #fff,
+    144px 1676px #fff, 21px 1601px #fff, 382px 1362px #fff, 912px 753px #fff,
+    1488px 1405px #fff, 802px 156px #fff, 174px 550px #fff, 338px 1366px #fff,
+    1197px 774px #fff, 602px 486px #fff, 682px 1877px #fff, 348px 1503px #fff,
+    407px 1139px #fff, 950px 1400px #fff, 922px 1139px #fff, 1697px 293px #fff,
+    1238px 1281px #fff, 1038px 1197px #fff, 376px 1889px #fff,
+    1255px 1680px #fff, 1008px 1316px #fff, 1538px 1447px #fff,
+    1186px 874px #fff, 1967px 640px #fff, 1341px 19px #fff, 29px 1732px #fff,
+    16px 1650px #fff, 1021px 1075px #fff, 723px 424px #fff, 1175px 41px #fff,
+    494px 1957px #fff, 1296px 431px #fff, 175px 1507px #fff, 831px 121px #fff,
+    498px 1947px #fff, 617px 880px #fff, 240px 403px #fff;}
+
+
+		@keyframes animStar {
+    from {transform: translateY(0px);}
+    to {transform: translateY(-2000px);}}
+
+		.name-group {
+		  display: flex;
+		  justify-content: space-between;}
+		.name-box {
+		  position: relative;
+		  display: inline-block;
+		  cursor: pointer;}
+		.name-box input {
+		  position: absolute;
+		  opacity: 0;
+		  cursor: pointer;}
+		.name-label {
+		  display: inline-block;
+		  padding: 8px 16px;
+		  background-color: #FFBCAA;
+		  color: #192567;
+		  border-radius: 4px;
+		  font-size: 14px;
+		  cursor: pointer;}
+		.name-box input:checked ~ .name-label {
+		  background-color: #FFBCAA;
+		  color: #192567;}
+		.toggle {
+		  position: relative;
+		  display: inline-block; 
+		  height: 34px;}
+
+		.toggle input {
+		  opacity: 0;
+		  width: 0;
+		  height: 0;}
+
+		.slider {
+		  position: absolute;
+		  cursor: pointer;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  transition: .4s;}
+
+		.slider:before {
+		  position: absolute;
+		  content: "";
+		  width: 0;
+		  height: 0;
+		  left: 4px;
+		  bottom: 4px;
+		  rotate:90deg;
+		  border-left: 13px solid transparent;
+		  border-right: 13px solid transparent;
+		  border-bottom: 22px solid white;
+		  transition: .4s;}
+
+		input:checked + .slider {}
+
+		input:checked + .slider:before {
+		  transform: rotate(90deg);}
+		.text-box {
+		  padding: 10px;
+		  background-color: #FFBCAA;
+		  color: #2740CB;
+		  font-size: 3rem;
+		  overflow: hidden;}
+
+		.flowing-text {display: inline-block;
+		  white-space: nowrap;
+		  animation: flowLeft 30s linear infinite;}
+
+		@keyframes flowLeft {
+		  0% {
+		    transform: translateX(0%);}
+		  100% {transform: translateX(-50%);}}
+
+		.image-container {
+		  position: relative;
+		  display: inline-block; width: 480px;}
+
+		.image-container img {
+		  display: block;
+		  width: 100%;
+		  height: auto;
+		  transition: filter 0.3s ease;}
+
+		.overlay {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  opacity: 0;
+		  background-color: rgba(0, 0, 0, 0.7);
+		  transition: opacity 0.3s ease;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;}
+
+		.image-container:hover img {
+		  filter: blur(4px) brightness(70%);}
+
+		.image-container:hover .overlay {
+		  opacity: 1;}
+
+		.text {width: 440px; align-items: center; overflow: auto; position: absolute;background: cover;}
+		.image-container:hover .text {opacity: 1;}
+		.review{width: 500px;
+			height: 300px; background: #FFBCAA; color: #2740CB; border: 1px solid #2740CB; position: absolute;}
+		.review h3{font-size: 24px;}
+		.review p{font-size: 14px;line-height: 22px;padding: 3%}
+		.close-b{width: 24px; height: 24px;vertical-align:top; margin: 0;}
+		.review-block{height: 20px;background: #2740CB;}
+		.review-block p{color: #FFBCAA;font-size: 14px;text-align: right; padding-right:1%; }
+		.use-box1{background: #293CA4;
+			padding: 2%;
+			margin: 1%;
+			flex: 1;
+			height: 400px;
+			overflow: hidden;
+  			transition: height 0.3s ease;}
+		.use-box2{background: #2740CB;
+			padding: 2%;
+			margin: 1%;
+			flex: 1;
+			height: 400px;
+			overflow: hidden;
+  			transition: height 0.3s ease;}
+		.use-box1:hover {flex: 9;}
+		.use-box2:hover {flex: 9;}
+		.content {padding: 20px;
+  			opacity: 0;
+  			transition: opacity 0.3s ease;}
+		.use-box1:hover .content {opacity: 1;}
+		.use-box1:hover .content {opacity: 1;}
+		.use-box1 h3{font-size: 40px;font-weight: 300;}
+		.use-box2 h3{font-size: 40px;font-weight: 300;}
+		.rotate-text{transform: rotate(90deg);}
+		.donut-chart {width: 200px;
+			  height: 200px;
+			  border-radius: 50%;
+			  background-color: #black;
+			  position: relative;
+			  overflow: hidden;}
+
+		.donut-chart-inner {
+		  width: 185px;
+		  height: 185px;
+		  border-radius: 50%;
+		  background-color: #1B276F;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);}
+
+		.donut-chart::before {
+		  content: "";
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  border-radius: 50%;
+		  background: conic-gradient(#FFBCAA 0% 86.9%, transparent 86.9% 100%);}
+
+		.donut-chart-text {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  font-size: 24px;
+		  font-weight: bold; text-align: center;}
+
+		
+    	.slider-container {
+		  position: relative;
+		  width: 100%;
+		  max-width: 800px;
+		  margin: 0 auto;
+		  overflow: hidden;}
+
+		.slider {
+		  display: flex;
+		  width: 700%;
+		  transition: transform 0.5s ease;}
+
+		.slider img {
+		  width: calc(100% / 7);
+		  height: auto;
+		  object-fit: cover;}
+
+		.slider-nav {
+		  position: absolute;
+		  top: 50%;
+		  transform: translateY(-50%);
+		  width: 100%;
+		  display: flex;
+		  justify-content: space-between;
+		  padding: 0 10px;
+		  box-sizing: border-box;}
+
+		.prev-btn,
+		.next-btn {
+		  background-color: rgba(0, 0, 0, 0.5);
+		  color: #fff;
+		  border: none;
+		  padding: 10px;
+		  font-size: 18px;
+		  cursor: pointer;}
+
+		@media screen and (max-width: 600px) {
+		  .slider img {width: calc(100% / 3);}
+		  
+		  .slider {width: 300%;}}
+		.map-img{width: 800px;}
+		.spray-img{position: absolute;top: 100px;}
+		*{margin:0; padding:0;
+  			font-size:15px; 
+  			line-height:1.3;}
+		ul{list-style:none;}
+		.tabCon.out-tabCon{
+		  min-height: 500px;}
+		.tabmenu{ 
+		  max-width:950px; 
+		  margin: 0 auto; 
+		  position:relative; 
+		}
+		.tabmenu ul{
+		  position: relative;
+		}
+		.tabmenu ul li{
+		  display:  inline-block;
+		  width:33.33%; 
+		  float:left;  
+		  text-align:center; 
+		  background :#FFBCAA;
+		  color: #263BA8;
+		  line-height:40px;
+		}
+		.tabmenu label{
+		  display:block;
+		  width:100%; 
+		  height:40px;
+		  line-height:40px;
+		}
+		.tabmenu input{display:none;}
+		.tabCon{
+		  display:none; 
+		  width: 100%;
+		  text-align:left; 
+		  padding: 20px;
+		  position:absolute; 
+		  left:0; top:40px; 
+		  box-sizing: border-box; 
+		  border : 5px solid #FFBCAA;
+		  color: #FFBCAA;
+		}
+		.tabmenu input:checked ~ label{
+		  background:#263BA8;
+		  color: #FFBCAA;
+		}
+		.tabmenu input:checked ~ .tabCon{
+		  display:block;
+		}
+		.zindex{z-index: 1;}
+		.mapheight{height: 500px;overflow: auto;}
+		.chart {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transition: 0.3s;
+  background:lightgray;
+  display:inline-block;}
+	.chart:after{ /* 가상선택자는 도넛 모양을 만들기 위함이다.*/
+  	content:'';
+  	background: #1B276F;  /* 백그라운드 컬러로 중앙가리기 */
+  	position: absolute;
+  	top:50%; left:50%; /* 도넛의 너비 설정 */
+  	border-radius: 50%;
+  	transform: translate(-50%, -50%);}
+	.chart-bar{
+  	width: inherit;
+  	height: inherit;
+  	border-radius: 86.9%;
+	background: conic-gradient( #1B276F 36deg, #FFBCAA 170deg, #FFBCAA); /* 차트 설정 */}
+	.text-bold{font-weight: 800;}
+	.notice{padding:20px;height:35px; background: #2740CB; color:white;
+		overflow: hidden; margin-top: 5px;}
+	.notice:hover{height:inherit;}
+	@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+	</style>
+</head>
+<body>
+<nav>
+	<div class="wrap menuflex">
+		<div class="logo"></div>
+		<ul class="menu">
+			<li>
+				<a href="#aaa">Insomnia</a>
+			</li>
+			<li>
+				<a href="#bbb">Abysseden</a>
+			</li>
+			<li>
+				<a href="#ccc">Review</a>
+			</li>
+			<li>
+				<a href="#ddd">How</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+	<header>
+		<div class="wrap">
+			<img class="img-title" src="LOGO.png">
+		</div>
+		<div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+	</header>
+	<section class="wrap" id="aaa">
+		<h2 style="padding-left:10px; ">Relative News<br>about Insomnia</h2>
+		<div class="flex">
+			<div class="row">
+				<div class="flex">
+					<div class="bg-news item-news">
+						<h3 class="h2-serif">Insomnia: 'I can only sleep for two hours a day on average'</h3>
+						<p class="p-source">21 April 2023<br>By Kay Crewdson,BBC North West Tonight</p>
+						<p class="p-eng">A man who first started struggling with insomnia following the death of his week-old daughter 10 years ago says he fears his "body will give out".Council dog handler Dan Hill, 51 and from Warrington, said he typically only sleeps for two to three hours a night.According to the NHS, adults on average need at least seven hours."I think it will kill me and that's properly dramatic I know," he said, adding: "It's something that I've got used to - it's part of my day-to-day."Mr Hill said the situation was "not getting worse [nor] better. This is the hand I've been dealt."And difficult though it may be, at some point the body will give out."Mr Hill said he had experienced severe insomnia since the death of his seven-day-old daughter Isabella in July 2013."Getting to sleep isn't the issue," he told BBC North West Tonight. "I can be awake again within an hour and that could be for any reason."It could be a knock at the door. It could be a dog barking. It could be someone walking past and that's me again for the day."It's not a case of going back to sleep because that's just not possible."Last week, Mr Hill decided to keep a sleep diary.Over those seven days he recorded a total of only 17 hours' sleep.He said he often found himself running on "auto-pilot" during the day."When you get home it's about trying to switch off," he said."But if you've only got six hours before you're going back in again, you can't switch off."Likewise you can't take any sleep remedies because you have to be awake again for the next shift."Mr Hill said he believed insomnia was far more common than most people realised. "Nobody I know has gone to a doctor and said 'you know what, I'm really struggling sleeping' because their lives just don't allow for them to take a tablet and fall asleep for 12 hours because they've got children to get up for school," he said. "They have got things to do and things like that. And I think sleep deprivation is a massive issue. "It has health implications. It has working life implications, relationships especially. It needs addressing."</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="bg-news item-news">
+					<h3>“오늘은 잘 수 있을까”···3년 간 경기도 불면증 인구 꾸준히 늘어</h3>
+					<p class="p-source">경기일보|박채령기자|24.03.31</p>
+					<p class="p-news">31일 국민건강보험공단에 따르면 경기도에서 불면증으로 병원을 찾은 환자는 지난 2022년 29만805명, 2021년 27만2천334명으로 증가하고 있다. 지난해는 6월 기준 21만1천922명으로, 2022년 같은 기간과 비교했을 때 이미 절반을 뛰어넘어 환자 수가 급증했을 것으로 추정된다.불면증 환자가 지불한 진료비 또한 지난 2022년 769억8천663억8천만원, 2021년 678억9천780만4천만원으로 증가했다. 지난해 진료비 역시 6월 기준 441억5천578억8천만원으로 전년 보다 증가했을 것으로 예상된다. 이처럼 불면증이 증가한 원인은 학교와 직장 내 심화되는 경쟁, 이로 인한 업무나 학업의 압박, 취업난과 직장 생활 등에서 비롯되는 스트레스, 과도한 카페인 섭취와 지나친 디지털 기기 사용 등 다양하다. 전문가들은 스트레스 요인을 제거할 수 없는 환경이라면 불면증 개선을 위해 잠자기 전 뇌의 각성 상태를 최대한 줄이는 노력이 필요하다고 입을 모은다. 임성철 가톨릭대학교성빈센트병원 신경과 교수는 “스트레스 상황에서 호르몬 분비로 인해 과각성 상태가 지속되면 잠을 자지 못하게 된다”며 “스트레스 누적으로 잠을 못 자는 날이 많아지면 수면을 해야 한다는 강박 때문에 더 잠들지 못하고, 이런 불안감이 쌓여 만성 불면이 될 수도 있다”고 말했다. 이어 임 교수는 “힘들더라도 일정한 수면패턴을 유지하는 것이 중요하다”며 “정해진 취침 시간에 잠들기 정 힘든 경우에는 일정한 수면패턴이 맞춰질 때까지 약간의 수면제를 복용하거나 온수욕, 또는 명상을 통해 뇌의 각성 상태를 최대한 완화시켜 일시적인 불면이 만성 불면으로 가지 않도록 하는 것이 중요하다”고 조언했다. 양주시 고암동에 사는 30대 여성 김문영씨(가명)는 요즘 하루 4시간도 자지 못한다. 육아와 직장 스트레스가 겹쳐 불안감이 밤에도 이어지기 때문이다. 지난 1월 서울 광화문에 있는 회사에 취직을 하며 통근 압박까지 더해져 걱정과 불안에 잠을 설치다 보면 날을 새기 일쑤다. 김 씨는 “잠을 못 자 예민해져 가족들에게 화를 내기도 한다”며 괴로운 얼굴을 했다. 성남시 분당구에 사는 마케팅 회사 직원 이윤호씨(가명·33) 또한 요즘 불면증에 시달리고 있다. 직장 내 동료들과 갈등을 겪기 시작한 후부터 밤에 잠이 오지 않는다. 낮에 깨어있기 힘들어 커피를 마실수록 밤에 각성 상태가 지속돼 더욱 잘 수 없는 악순환이 반복되고 있다. 불면증으로 병원을 찾는 경기도민이 급증하고 있다. 불면증은 낮에 일터에서 생산성을 낮추고 식욕 조절 호르몬에도 영향을 미쳐 체중 변화와 건강 이상을 초래하는 등 삶의 질을 떨어트릴 수 있다는 지적이다.</p>
+					</div>
+				</div>
+				 <div class="flex">
+				 	<div class="bg-news item-news"> 
+						<h3>수면 장애도 ‘질환’…지난해 110만명 치료 : 약물 요법은 급성 불면증에서 4주 이내</h3>
+						<p class="p-source">[헬스]</p>
+						<p class="p-news">최근 들어 숙면을 취하지 못하는 ‘수면 장애’ 환자가 급증하고 있다. 국민건강보험공단이 공개한 2018~2022년 수면 장애 환자 건강보험 진료 현황에 따르면 지난해 수면 장애로 병원을 찾은 환자는 109만8819명으로 4년 전인 2018년 85만5025명보다 28.5% 늘었다. 연령대별 환자 비율은 60대가 23%(25만2829명)로 가장 많았고, 이어 50대 18.9%(20만7698명), 70대 16.8%(18만4863명) 순으로 나타났다</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="wrap">
+		<div class="flex" style="padding-top: 100px;">
+			<div class="width300">
+				<div class="chart">
+	  				<div class="chart-bar" data-deg="50"></div>
+	  			</div>
+				<p style="margin-top: 50px;">불면증은 지속적이고 만성적인 수면 장애로, 수면의 질과 양이 모두 떨어지는 상태를 의미합니다. 불면증의 원인은 매우 다양하며, 스트레스, 우울증, 불안, 신체 질환 등이 주요 요인으로 작용합니다.</p>
+			</div>
+			<div style="width: 600px;">
+				<img src="Graph3.png" style="width: 560px; padding-left: 20px;padding-bottom: 20px;">
+				<img src="Graph1.png">
+			</div>
+		</div>
+	</section>
+	<section class="wrap menuflex">
+		<div>
+			<h2>OECD<br>Average<br>Sleep-time</h2>
+			<img class="width360" src="sleeptime.png">
+		</div>
+		<div>
+			<h2 class="right" style="padding-left: 20px;">Reason<br>of<br>Insomnia</h2>
+			<img style="width: 500px;" src="insomnia-reason.png">
+		</div>
+	</section>
+	<section class="wrap">
+		<h2>Insomnia</h2>
+		<img src="Graph2.png" style="position: relative;">
+		<div class="flex">
+			<div class="item">
+				<h3>인지 기능 저하</h3>
+				<p>집중력, 기억력, 문제 해결 능력 등이 감소</p>
+				<p>실수와 사고 발생 위험이 높아짐</p>
+			</div>
+			<div class="item">
+				<h3>기분 및 감정 변화</h3>
+				<p>짜증, 우울, 불안 등 부정적인 감정이 증가</p>
+				<p>감정 조절 능력이 저하되어 과민해짐</p>
+			</div>
+			<div class="item">
+				<h3>신체 건강 악화</h3>
+				<p>면역력 저하로 감염 위험이 높아짐</p>
+				<p>대사 및 호르몬 불균형으로 체중 증가, 당뇨 등 질환 발생</p>
+			</div>
+			<div class="item">
+				<h3>사고 위험 증가</h3>
+				<p>졸음운전, 작업 중 사고 발생 확률이 높아짐</p>
+				<p>주의력 저하로 인한 안전사고 위험 증가</p>
+			</div>
+			<div class="item">
+				<h3>삶의 질 악화</h3>
+				<p>피로감과 에너지 부족으로 일상 활동이 어려워짐</p>
+				<p>사회생활과 대인관계에도 부정적인 영향을 줌</p>
+			</div>
+		</div>
+	</section>
+	<section class="wrap">
+		<div class="flex">
+			<div>
+				<img src="2-1.png">
+				<p class="center">부작용에 대한 우려</p>
+			</div>
+			<div>
+				<img src="2-4.png">
+				<p class="center">의존성과 내성 발생</p>
+			</div>
+			<div>
+				<h2 style="font-size: 4.5rem;text-align: center;padding-top: 30px;">수면<br>유도제</h2>
+			</div>
+			<div>
+				<img src="5-2.png">
+				<p class="center">다른 치료법 선호</p>
+			</div>
+		</div>
+		<div class="flex">
+			<div>
+				<img src="2-3.png">
+				<p class="center">자연스러운 수면 방해</p>
+			</div>
+			<div>
+				<img src="4-2.png">
+				<p class="center">약물 남용의 경계심</p>
+			</div>
+			<div>
+				<img src="3-3.png">
+				<p class="center">기억력 감퇴, 인지기능 저하</p>
+			</div>
+			<div>
+				<h2 style="font-size: 4.5rem;text-align: center;padding-top: 40px;">꺼리는<br>이유</h2>
+			</div>
+		</div>
+	</section>
+	<section class="wrap" id="bbb">
+		<div style="padding: 0px 20px 20px;">
+			<img class="spray-img" src="spray-ani.gif">
+			<div style="padding-top: 500px;">
+				<img style="width: 700px;" src="LOGO.png">
+				<div style="width: 600px;">
+					<p>‘Abysseden’은 청해파리목 해파리에서 추출한 RFamide 펩타이드를 주원료로 사용합니다.<br>RFamide는 해파리의 자연적인 신경전달물질로, 보다 생체 친화적이며 합성 화학물질에 비해<br>부작용 가능성이 낮습니다.</p>
+					<p>일반적으로 독성이 약한 청해파리목 해파리에서 추출하여 보다 안전합니다.</p>
+				</div>
+			</div>		
+		</div>
+	</section>
+	<section class="wrap">
+		<h2>RFamide Peptide</h2>
+		<div class="flex" style="padding-top: 40px;">
+			<div style="width: 200px;"></div>
+			<div style="width: 200px;"></div>
+			<div style="width: 200px;">
+				<hr>
+				<p>01 새로운 작용 기전</p>
+				<p>해파리 RFamide 펩티드는 포유류의 RFamide 관련 펩티드(FRPs)와 구조적 유사성을 가지며, FRPs는 시상하부에서 수면-각성 주기 조절에 관여합니다. 기존 수면유도제와 다른 새로운 작용 기전을 통해 불면증 치료 효과를 나타낼 수 있습니다.</p>
+			</div>
+			<div style="width: 200px;">
+				<hr>
+				<p>02 선택성 및 특이성 증대</p>
+				<p>해파리 RFamide 펩티드는 특정 수용체에 선택적으로 작용할 가능성이 있습니다. 이를 통해 수면 유도에 직접 관련된 신경회로를 표적화하여 효과를 높이고 부작용을 최소화할 수 있습니다.</p>
+			</div>
+		</div>
+		<div class="flex" style="padding-top: 60px;">
+			<div style="width: 200px;"></div>
+			<div style="width: 200px;"></div>
+			<div style="width: 200px;">
+				<hr>
+				<p>03 효능 증대</p>
+				<p>해파리 RFamide 펩티드가 기존 수면유도제보다 강력한 수면 유도 효과를 나타낼 가능성이 있습니다. 적은 용량으로도 효과적인 수면 개선 효과를 기대할 수 있습니다.</p>
+			</div>
+			<div style="width: 200px;">
+				<hr>
+				<p>04 부작용 및 의존성 감소</p>
+				<p>RFamide 펩티드는 내인성 물질과 유사한 구조를 가지므로, 외인성 약물에 비해 부작용 발생 위험이 낮을 수 있습니다. 의존성 및 내성 발생 가능성도 상대적으로 적을 것으로 기대됩니다.</p>
+			</div>
+		</div>
+	</section>
+	<section class="wrap">
+		<h2 class="center">Rhizostomeae</h2>
+		<div class="tabmenu out-tabmenu">
+		  <ul>
+		    <li id="tab1" class="btnCon"> 
+		      <input type="radio" checked name="tabmenu" id="tabmenu1">
+		      <label for="tabmenu1">Rhizostomeae</label>
+		      <div class="tabCon mapheight" >
+		      	<img src="map-pk.png">
+		      	<div class="flex">
+		      		<div></div>
+		      		<div>
+		      			<hr>
+		      			<h3 style="line-height: 25px; width: 400px; padding-bottom: 10px;"><청해파리목>
+		      			<p>학명: Rhizostomeae<br>그리스어로 "뿌리 입(root mouth)"이라는 의미를 가지고 있다. 이는 청해파리목 해파리들이 우산 아랫면에 작은 입구들이 모여서 하나의 큰 입구 구조를 가지고 있는 특징을 반영한 것이다.</h3>
+		      			<hr>
+		      			<h3 >청해파리목(Rhizostomeae)의 특징</h3>
+		      			<div class="flex">
+		      				<p class="text-bold">입구 구조<br><br>섭식 방식<br><br>촉수<br><br>크기<br>분포<br><br>대표 종</p>
+		      				
+		      				<p style="border-left: 1px solid #FFBCAA; padding-left: 10px;">우산 아랫면에 작은 다수의 입구들이 모여 있는 독특한 구조를 가짐<br>이런 입구 구조에서 유래한 명칭 "뿌리 입(Rhizo-stome)"<br>작은 다수의 입구를 통해 플랑크톤, 소형 동물 등을 여과 섭취<br>일반 해파리보다 정교하고 효율적인 여과 섭식 능력을 가짐<br>몸체에서 길게 늘어뜨린 촉수를 가지고 있음<br>이를 이용해 먹이를 포획하고 자신을 보호함<br>우산 직경이 최대 1-2m까지 자랄 수 있는 대형 해파리임<br>열대 및 아열대 연안 해역에 주로 서식<br>인도-태평양, 대서양 등 전 세계 온난 해역에 널리 분포<br>청해파리, 노랑해파리, 갈색해파리 등이 대표적 </p>
+		      			</div>
+		      		</div>
+		      	</div>
+		      </div>
+		      
+		    </li>
+		    <li id="tab2" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu2">
+		      <label for="tabmenu2">Rhizostoma pulmo</label>
+		      <div class="tabCon" >
+		      	<h3>청해파리(Blue Jellyfish) - Rhizostoma pulmo</h3>
+		      	<hr>
+		      	<div class="flex mapheight">
+		      		<div style="width: 250px;">
+		      			<img src="blue.png" style="padding-top: 5px;">
+		      			<div style="padding-top: 70px;"></div>
+		      			<img src="barrel1.png" style="padding-top: 5px;border: 1px solid #FFBCAA;">
+		      		</div>
+		      		<p class="width300">Rhizostoma pulmo는 일반적으로 배럴 해파리, 먼지통 뚜껑 해파리 또는 프릴리 입 해파리로 알려진 Rhizostomatidae 과에 속하는 해파리입니다. 북동 대서양, 아드리아 해, 지중해, 흑해, 아조프 해에서 발견됩니다. 또한 남아프리카 서부 해안과 폴스 베이 남부 대서양에서도 알려져 있습니다. 일반적으로 늦여름과 초가을에 개체 수가 증가하는 블룸 현상으로 발견됩니다. 이는 기온 상승과 바람과 같은 다른 환경적 요인 때문입니다.<br><br>아일랜드 해에서 흔히 발견됩니다. 일반적으로 직경이 최대 40cm(16인치)이지만, 예외적으로 150cm(59인치) 이상 커질 수 있어 영국과 아일랜드 해역에서 가장 큰 해파리가 됩니다(Cyanea capillata는 더 큰 크기에 도달하지만, 영국에서는 일반적으로 더 작습니다). 2019년 7월 13일, 야생동물 생물학자 리지 델리는 수중 촬영기사 댄 애벗과 함께 영국 콘월 해안에서 다이빙을 했습니다. 두 다이버는 사람 크기의 배럴 해파리 Rhizostoma pulmo와의 조우를 공유했습니다. 이 종은 일반적으로 1미터(3.2피트)까지 자랄 수 있고 최대 25킬로그램(55파운드)까지 나갈 수 있습니다. 그러나 사자갈기 해파리보다는 크지 않습니다.<br><br>Rhizostoma pulmo는 다른 종만큼 치명적이지는 않지만 적당히 독성이 있습니다. 피부에 화끈거리는 느낌, 피부염, 궤양 등의 영향은 인간에게 독성이 있음을 확인시켜 줍니다. 그러나 인간에게 심각한 위협은 되지 않습니다.<br><br>가죽거북의 주요 먹이입니다. 아시아에서는 전통 식품과 의약품에 사용되는 생리활성 화합물의 원천입니다. 한 연구에 따르면 수용액에서 세척하고 추출물에서 고분자량 단백질을 분리하는 것(예: 막 여과)이 해파리 추출물에서 가능한 독성 화합물을 제거하고 잠재적으로 생리활성이 있는 수용성 화합물을 농축하는 방법이 될 수 있다고 합니다. 잠재적으로 활성이 있는 수용성 성분은 기능성 식품 및 화장품 원료로 사용될 수 있습니다.</p>
+		      		<p class="width300">Rhizostoma pulmo, commonly known as the barrel jellyfish, the dustbin-lid jellyfish or the frilly-mouthed jellyfish, is a scyphomedusa in the family Rhizostomatidae. It is found in the northeast Atlantic, and in the Adriatic, Mediterranean Sea, Black Sea and Sea of Azov. It is also known from the southern Atlantic off the western South African coast and into False Bay. They are found typically in late summer, and early fall in increased populations which is also know as blooms. This is due to higher temperatures and other environmental factors such as wind.<br><br>It is common in the Irish Sea. It typically is up to 40 cm (16 in) in diameter, but can exceptionally reach 150 cm (59 in) or larger, making it the largest jellyfish in British and Irish waters (Cyanea capillata reaches an even larger size, but is generally smaller in Britain). On 13 July 2019, wildlife biologist Lizzie Daly dived off the coast of Cornwall in the United Kingdom, along with the underwater cinematographer Dan Abbott.[9] The two divers shared their encounter with a human-sized barrel jellyfish, Rhizostoma pulmo. The species could typically grow up to one meter (3.2 feet) and weigh up to 25 kilograms (55 lbs). However, they are not larger than the lion's mane jellyfish.<br><br>Rhizostoma pulmo is moderately venomous but not as deadly as other species. Effects include a burning sensation on the skin, dermatitis, and ulcers which confirms it is toxic to humans. However, it does not pose a serious threat to humans.<br><br>It is a favourite food of the leatherback turtle.<br><br>In Asia, they are a source of bioactive compounds used in traditional food and medicine. One study indicates that washing in aqueous solutions and the separation of high molecular weight proteins from the extract, e.g., by membrane filtration, could be a way to remove possible toxic compounds from jellyfish extracts and to concentrate potentially bioactive soluble compounds. The potentially active soluble components may have uses as nutraceutical and cosmeceutical ingredients.</p>
+		      	</div>
+		      </div>
+		      
+		    </li>    
+		    <li id="tab3" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu3">
+		      <label for="tabmenu3">Phyllorhiza punctata</label>
+		      <div class="tabCon" >
+		      	<h3>노랑해파리(Yellow-brown Jellyfish) - Phyllorhiza punctata</h3>
+		      	<hr>
+		      	<div class="flex mapheight">
+		      		<div style="width: 250px;">
+		      			<img src="yellow.png">
+		      			<div style="padding-top: 70px;"></div>
+		      			<img src="medura2.png"style="padding-top: 5px;border: 1px solid #FFBCAA;">
+		      		</div>
+		      		<p class="width300">Phyllorhiza punctata는 해파리의 한 종으로, 떠다니는 종, 호주 점박이 해파리, 갈색 해파리 또는 흰점박이 해파리로도 알려져 있습니다. 이 해파리는 호주에서 일본에 이르는 서태평양이 원산지이지만, 다른 지역에도 널리 유입되었습니다. 주로 동물성 플랑크톤을 먹이로 합니다. P. punctata는 일반적으로 종 지름이 최대 50cm까지 자랄 수 있지만, 2007년 10월 노스캐롤라이나 주 선셋 비치에서 발견된 개체는 74cm 넓이로, 지금까지 기록된 것 중 가장 큰 것일 수 있습니다.<br><br>진해파리는 성체(메두사 단계)와 폴립 단계(미성숙 단계)로 구성된 두 단계의 생활사를 거칩니다. 메두사 단계에서 수컷 해파리는 물속에 정자를 방출하고, 암컷 해파리는 입으로 정자를 모아 알을 품습니다. 수정이 이루어지고 유생이 형성되면 어미를 떠나 바닥으로 가라앉습니다. 바닥에 도착하면 폴립 형태가 되고, 이 형태는 무성생식을 통해 자신을 다른 폴립으로 "복제" 또는 분열합니다. 해파리는 폴립 단계에서 최대 5년, 메두사 단계(활동기)에서 최대 2년 동안 살 수 있습니다.<br><br>따뜻한 물에서 발견될 때 이 해파리들은 번성합니다. 그들은 대부분 광염성이지만 낮은 염분도는 이 종에 부정적인 영향을 미칠 수 있습니다. 염분이 낮을 때, 이 해파리들은 그들의 유조물(zooxanthellae)을 잃어버리는 모습을 보입니다. 그들의 분산 패턴은 국지적으로 불규칙합니다.<br><br>이들은 약한 독을 가지고 있어 인간에게 위협이 되지 않는 것으로 간주됩니다. 그들은 약하거나 거의 느껴지지 않는 쏘림을 가지고 있으며, 이는 묽은 산으로 치료할 수 있습니다. (보통 흰 식초나 사과 식초)</p>
+		      		<p class="width300">Phyllorhiza punctata is a species of jellyfish, also known as the floating bell, Australian spotted jellyfish, brown jellyfish or the white-spotted jellyfish. It is native to the western Pacific from Australia to Japan, but has been introduced widely elsewhere. It feeds primarily on zooplankton. P. punctata generally can reach up to 50 centimetres (20 in) in bell diameter, but in October 2007, one 74 cm (29 in) wide, perhaps the largest ever recorded, was found on Sunset Beach, North Carolina. True jellyfish go through a two-stage life cycle which consists of a medusa stage (adult) and a polyp stage (juvenile). In the medusa stage, male jellyfish release sperm into the water column and the female jellyfish gathers the sperm into her mouth where she holds the eggs. Once fertilization occurs and larvae are formed they leave their mother and settle to the ocean floor. Once on the bottom a polyp form occurs and this form reproduces asexually by "cloning" or dividing itself into other polyps. Jellyfish can live for up to five years in the polyp stage and up to two years in the medusa stage (active). When found in warm waters these jellyfish flourish. They are mostly euryhaline but low salinities may have a negative effect on the species. In times of low salinity, these jellyfish exhibit loss of their zooxanthellae. Their dispersal patterns are locally patchy. They have only a mild venom and are not considered a threat to humans. They have a mild or non-noticeable sting which can be cured with dilute acid. (Usually white or cider vinegar)</p>
+		      	</div>
+		      </div>
+		    </li>
+		    <li id="tab4" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu4">
+		      <label for="tabmenu4">Nemopilema nomura</label>
+		      <div class="tabCon">
+		      	<h3>갈색해파리(Brown Jellyfish) - Nemopilema nomurai</h3>
+		      	<hr>
+		      	<div class="flex mapheight">
+		      		<div style="width: 250px;">
+		      			<img src="brown.png">
+		      			<div style="padding-top: 70px;"></div>
+		      			<img src="nomura.png"style="padding-top: 5px;border: 1px solid #FFBCAA;">
+		      		</div>
+		      		<p class="width300">노무라입방해파리(에치젠쿠라게, Nemopilema nomurai)는 매우 큰 근해파리목 해파리로, 세계에서 가장 큰 자포동물인 사자갈기해파리와 같은 크기 등급에 속합니다. 식용이기는 하지만 높은 품질로 간주되지는 않습니다. 단형속인 Nemopilema의 유일한 종입니다. 동아시아 해역에서 흔히 발견되며, 크기와 수량으로 인해 어업에 부정적인 영향을 미칠 수 있습니다. 대량 발생에 대처하는 한 가지 방법으로, 최근 연구에서는 의학적 응용을 위해 독을 연구하는 등 대형 해파리의 새로운 용도를 찾으려고 시도하고 있습니다.<br><br>Nemopilema nomurai는 지름이 최대 2m, 무게가 최대 200kg까지 자랄 수 있으며, 완전히 성장했을 때의 지름은 평균 성인 키보다 약간 큽니다. 이 종은 1921년 12월 초 후쿠이현 수산시험장 노무라 간이치 소장(C18-C19)이 72리터짜리 나무 수조에 담긴 표본을 기시노우예 교수에게 보내 연구한 것을 기려 명명되었습니다. 기시노우예 교수는 이 표본이 알려지지 않은 종임을 발견하고 시간을 들여 살아있는 표본을 연구했습니다.<br><br>대마도와 이키 제도 주변에서 잡힌 Nemopilema nomurai는 반투명한 희끄무레한 몸체에 분홍색 또는 붉은색 겨울눈과 구완, 그리고 투명한 미성숙 생식선을 가지고 있습니다. 해파리는 상피근육세포와 가로무늬근육세포라는 두 가지 주요 근육 유형을 가지고 있습니다. 연구자들은 가로무늬근과 밀접하게 관련된 유전자군이 해파리의 종 부분에서 발현된다는 것을 발견했는데, 이는 가로무늬근이 해파리의 운동성에 중요한 역할을 한다는 증거를 제공합니다.</p>
+		      		<p class="width300">Nomura's jellyfish (エチゼンクラゲ, echizen kurage, Nemopilema nomurai) is a very large rhizostome jellyfish, in the same size class as the lion's mane jellyfish, the largest cnidarian in the world. It is edible but not considered high quality. It is the only species in the monotypicgenus Nemopilema. Commonly found in the waters of East Asia, and can negatively effect fisheries due to their large size and quantity. As a form of combating the large blooms, recent studies attempt to find new uses for the large jellyfish such as studying its venom for medical applications.Nemopilema nomurai can grow up to 2 m (6 ft 7 in) in diameter and weigh up to 200 kg (440 lb), the diameter when fully grown is slightly greater than the height of an average human. The species was named in tribute to Mr. Kan'ichi Nomura (C18–C19), Director General of the Fukui PrefecturalFisheries Experimental Station, who in early December 1921 sent a specimen in a 72-litre (16 imp gal; 19 US gal) wooden tank to Professor Kishinouye, who found that it was unknown and dedicated time to study the living specimens. Nemopilema nomurai caught around Tsushima and the Iki Islands have a translucent whitish body, with pinkish or reddish capulets and oral arms, and transparent immature gonads. Jellyfish have two main types of muscle: epitheliomuscular cells and striated muscle cells. Researchers found that gene families that are closely associated with striated muscle were expressed in the bell portion of the jellyfish, providing evidence that striated muscle plays a significant role in jellyfish motility.</p>
+		      	</div>
+		      </div>
+		      
+		    </li>
+		    <li id="tab5" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu5">
+		      <label for="tabmenu5">Chrysaora hysoscella</label>
+		      <div class="tabCon" >
+		      	<h3>빗살해파리(Stinging Jellyfish) - Chrysaora hysoscella</h3>
+		      	<hr>
+		      	<div class="flex mapheight">
+		      		<div style="width: 250px;">
+		      			<img src="stinging.png">
+		      			<div style="padding-top: 70px;"></div>
+		      			<img src="chrysaora.png"style="padding-top: 5px;border: 1px solid #FFBCAA;">
+		      		</div>
+		      		<p class="width300">크리사오라 히소셀라(Chrysaora hysoscella), 일명 나침반 해파리는 북해와 지중해를 포함한 북동 대서양의 온대 지역 연안 해역에 서식하는 흔한 해파리 종입니다. 과거에는 남아프리카를 포함한 남동 대서양에서도 기록되었지만, 이는 C. africana, C. fulgida 그리고 "C. agulhensis"로 잠정적으로 불리는 미기록 종과 혼동되어 발생한 것이었습니다.<br><br>이 해파리는 종 위에 길쭉한 V자 모양의 뚜렷한 갈색 무늬를 가진 진정한 해파리로, 방사대칭을 보입니다. C. hysoscella 성체는 기생충 Hyperia medusarum에 매우 취약하지만, 이는 개체 수에 큰 영향을 미치지 않았습니다. 이 생물은 부유성 성체 해파리로 발달하기 전에 저서성 폴립 단계를 거칩니다. 나침반 해파리는 다양한 해양 무척추동물과 플랑크톤을 소비하며, 포식자는 매우 적습니다. C. hysoscella는 레저 활동 방해, 어촌 지역의 경제적 혼란, 어족 자원 고갈 등 여러 이유로 인간에게 우려되는 전 세계적인 해파리 개체 수 과다 문제에 기여하고 있습니다.<br><br>성체의 경우, 나침반 해파리의 종은 일반적으로 지름이 15-25cm입니다. 보통 반투명한 황백색 종 위에 16개의 갈색 길쭉한 V자형 무늬가 있습니다. 이 무늬는 중앙의 갈색 점을 둘러싸고 있으며 나침반의 면을 닮았다고 해서 나침반 해파리라는 일반명이 붙었습니다. 보통 황백색을 띠며 갈색이 약간 섞여 있습니다. 24개의 촉수는 8개씩 3그룹으로 배열되어 있습니다. 각 촉수에는 먹이를 잡고 포식자로부터 방어하기 위한 자포세포가 있습니다. 각 촉수 그룹 사이에는 빛의 변화를 감지하고 해파리가 수층에서의 위치를 결정하고 유지하는 데 도움을 주는 감각기가 위치해 있습니다. 4개의 구완은 촉수와 구별되는데, 구완은 훨씬 길고 접힌 것처럼 구불구불한 모양을 하고 있습니다. 이 구완은 촉수에서 잡힌 먹이를 종 아랫면 중앙에 있는 구완 사이의 입으로 이동시키는 역할을 합니다.<br><br>나침반 해파리는 켈트해, 아일랜드해, 북해, 지중해를 포함한 북동 대서양의 연안 해역에서 발견됩니다. 이들은 주로 수층 상부에 서식하며, 얕은 물에 서식하지만 수면에서부터 해저 바로 위까지 수층을 오가며 이동하는 경우가 많습니다. 수면에서 30m 이상 깊은 곳에서는 거의 발견되지 않습니다.<br><br>나침반 해파리는 육식성으로, 다른 해양 무척추동물과 플랑크톤을 먹습니다. 와편모조류, 요각류, 갑각류 알, 어린 물고기, 모악류 등 다양한 저서 및 부유성 생물을 먹이로 삼습니다. 촉수의 자포세포로 먹이를 기절시키고 잡습니다. 구완은 잡힌 먹이를 구강으로 이동시키는 역할을 합니다. 나침반 해파리의 포식자는 매우 적습니다. 장수거북과 만새기에 의해 먹히는 것으로 알려져 있습니다.</p>
+		      		<p class="width300">Chrysaora hysoscella, the compass jellyfish, is a common species of jellyfish that inhabits coastal waters in temperate regions of the northeastern Atlantic Ocean, including the North Seaand Mediterranean Sea. In the past it was also recorded in the southeastern Atlantic, including South Africa, but this was caused by confusion with close relatives; C. africana, C. fulgida and an undescribed species tentatively referred to as "C. agulhensis".<br><br>It is a true jellyfish displaying radial symmetry with distinct brown markings shaped like elongated V's on its bell. C. hysoscella adults are highly susceptible to the parasite Hyperia medusarum, but this has had no significant effects on the population. This organism has a benthic polypstage before developing into a pelagic adult medusae. Compass jellyfish consume a variety of marine invertebrates and plankton and are preyed on by very few. C. hysoscella contribute to the global issue of jellyfish overpopulation which is concerning to humans for various reasons including recreational interference, economic turmoil for fishing communities, and depleted fish resources.<br><br>As an adult, the bell of the compass jellyfish typically has a diameter of 15–25 cm (5.9–9.8 in). It usually has 16 brown elongated V-shaped markings on the translucent yellow-white bell. The markings surround a central brown spot and resemble the face of a compass, hence the common name compass jellyfish. It is usually colored yellowish white, with some brown. Its 24 tentacles are arranged in eight groups of three. Each tentacle has stinging cells for capturing prey and defense from predators. A sense organ is located between each group of tentacles, which can perceive changes in light and helps the jellyfish determine and maintain its position in the water column. It has 4 oral arms that can be distinguished from the tentacles because the arms are noticeably longer and have a folded, frilly appearance. These arms are used to facilitate transfer of captured prey from the tentacles to the mouth which is between the oral arms at the center of the underside of the bell.<br><br>The compass jellyfish is found in coastal waters of the northeast Atlantic, including the Celtic, Irish, North and MediterraneanSeas. They inhabit these waters mostly at the top of the water column, and although they inhabit shallow water, they move up and down in the water column often ranging from surface waters to just above the seabed. They are rarely found deeper than 30 m from the surface.<br><br>Compass jellyfish are carnivores, consuming other marine invertebrates and plankton. They feed on a variety of benthic and pelagic organisms including but not limited to: dinoflagellates, copepods, crustacean eggs, larval fish, and chaetognaths. They stun and capture their prey with stinging cells on their tentacles. The oral arms facilitate movement of captured prey into the oral opening. Compass jellyfish have very few predators. They are known to be consumed by the leatherback sea turtle and ocean sunfish.</p>
+		      	</div>
+		      </div>
+		      
+		    </li>
+		    <li id="tab6" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu6">
+		      <label for="tabmenu6">Cassiopea spp.</label>
+		      <div class="tabCon" >
+		      	<h3>날개해파리(Upside-down Jellyfish) - Cassiopea spp.</h3>
+		      	<hr>
+		      	<div class="flex mapheight">
+		      		<div style="width: 250px;">
+		      			<img src="upside.png">
+		      			<div style="padding-top: 60px;"></div>
+		      			<img src="cassiopea.png"style="padding-top: 5px;border: 1px solid #FFBCAA;">
+		      		</div>
+		      		<p class="width300">Cassiopea(업사이드다운 해파리)는 진해파리의 한 속이며 Cassiopeidae과에 속합니다. 이들은 플로리다, 카리브해, 미크로네시아의 얕은 맹그로브 늪지, 갯벌, 운하, 거북이풀 평원을 포함한 전 세계의 따뜻한 연안 지역에서 발견됩니다. 해파리는 대개 얕은 바다 바닥에 거꾸로 누워 살아가는데, 이로 인해 일반명이 붙었습니다. 이 해파리들은 광합성 와편모조류와 공생 관계를 맺고 있어, 에너지원을 공급하기 위해 충분한 빛이 투과되는 곳에 거꾸로 누워 있어야 합니다. 발견되는 곳에는 흰색, 파란색, 녹색, 갈색 등 다양한 색조를 가진 개체들이 많이 있을 수 있습니다.</p>
+		      		<p class="width300">Cassiopea (upside-down jellyfish) is a genus of true jellyfish and members of the family Cassiopeidae. They are found in warmer coastal regions around the world, including shallow mangrove swamps, mudflats, canals, and turtle grass flats in Florida, the Caribbean and Micronesia. The medusa usually lives upside-down on the sea floor in shallow areas, which has earned them their common name. These jellyfish partake in a symbiotic relationship with photosynthetic dinoflagellates and therefore, must lie upside-down in areas with sufficient light penetration to fuel their energy source. Where found, there may be numerous individuals with varying shades of white, blue, green and brown.</p>
+		      	</div>
+		      </div>
+		      
+		    </li>
+		  </ul>
+		</div>
+	</section>
+	<section>
+		<img src="lab3.png" style="padding-top: 600px;">
+	</section>
+	<section class="wrap">
+		<h2>Preparation Process</h2>
+		<div style="width: 520px;">
+			<div class="flex">
+				 <div class="toggle-container">
+  					<input type="checkbox" id="tg1" class="toggle-input">
+  					<label for="tg1" class="toggle-label">
+    					<h2 class="toggle-box">RFamide 펩티드 동정 및 구조 분석</h2>
+    					<p class="toggle-content">청해파리목 해파리 추출물에서 RFamide 펩티드를 분리, 정제합니다.질량분석법, 아미노산 서열분석법 등을 통해 펩티드의 정확한 구조를 동정합니다.Nemopilema nomurai에서 16개의 RFamide 펩티드 EST가 발견된 바 있어 이를 활용할 수 있을 것입니다.</p>
+  					</label>
+				</div>
+			</div>
+		</div>
+		<div style="width: 520px; padding-left: 160px;">
+			<div class="flex">
+				<div class="toggle-container">
+  					<input type="checkbox" id="tg2" class="toggle-input">
+  					<label for="tg2" class="toggle-label">
+    					<h2 class="toggle-box">약리 활성 및 작용기전 연구</h2>
+    					<p class="toggle-content">동정된 RFamide 펩티드를 실험동물에 투여하여 수면 유도 효과를 확인합니다.수면다원검사, 뇌파 분석 등을 통해 객관적인 수면 지표 평가가 필요합니다. 수용체 결합 연구, 신호전달경로 분석 등을 통해 펩티드의 작용 기전을 규명합니다.</p>
+  					</label>
+				</div>
+			</div>
+		</div>
+		<div style="width: 520px; padding-left: 320px;">
+			<div class="flex">
+				<div class="toggle-container">
+  					<input type="checkbox" id="tg3" class="toggle-input">
+  					<label for="tg3" class="toggle-label">
+    					<h2 class="toggle-box">약물동태 및 독성 연구</h2>
+    					<p class="toggle-content">펩티드의 체내 흡수, 분포, 대사, 배설 과정을 평가합니다. 단회 및 반복투여 독성시험을 통해 안전성을 확인합니다. 약물 상호작용, 특수 집단에서의 사용 가능성도 고려해야 합니다.</p>
+  					</label>
+				</div>
+			</div>
+		</div>
+		<div style="width: 520px; padding-left: 480px;">
+			<div class="flex">
+				<div class="toggle-container">
+  					<input type="checkbox" id="tg4" class="toggle-input">
+  					<label for="tg4" class="toggle-label">
+    					<h2 class="toggle-box">비강스프레이 개발 및 임상실험</h2>
+    					<p class="toggle-content">펩티드 제제 개발을 위한 제형 연구가 필요합니다. 안정성, 방출 조절 등을 고려하여 최적의 제형을 설계합니다. 건강한 지원자 및 불면증 환자를 대상으로 단계별 임상시험을 진행하여 안전성과 유효성을 입증합니다.</p>
+  					</label>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section style="margin: 0;padding: 0;">
+		<div class="text-box">
+  		<h2 class="flowing-text" style="padding: 0;">Alternative New! Alternative New! Alternative New! Alternative New! Alternative New! Alternative New! Alternative New! Alternative New!</h2>
+		</div>
+	</section>
+	<section class="wrap">
+		<h2 style="text-align: right; font-size: 6rem;line-height: 1.2;">자연에서 따온 성분으로<br>인위적이지 않은<br>수면 유도 효과.<br>비강 스프레이 제형으로<br>빠르고 간편하게.
+		</h2>
+		<div class="flex"  style="padding-top: 30px;">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p style="border-left: 1px solid #FFBCAA;padding: 0px 10px">빠른 약효 발현<br>간편한 사용과 휴대성<br>위장관 부작용 최소화<br>간 대사 우회</p>
+			<p style="border-left: 1px solid #FFBCAA;padding: 0px 10px">투여 용량 조절 용이<br>중추신경계 직접 전달<br>순응도 개선</p>
+		</div>
+	</section>
+	<section class="wrap" id="ccc">
+		<h2>Review</h2>
+		<div class="flex">
+			<div class="image-container">
+  				<img src="doc1.png" alt="doc1.png">
+  				<div class="overlay">
+    				<p class="text">안녕하세요, 수면장애 전문의 김민호입니다.<br>최근 불면증 치료에 있어 주목할 만한 신제형으로 '어비세덴(Abysseden)' 비강 스프레이를 소개하고 싶습니다. '어비세덴'은 해파리 추출물인 RFamide 펩티드를 활용한 혁신적인 수면유도제로, 기존 경구 약물의 한계를 극복하고자 비강 투여 제형으로 개발되었습니다. 비강 스프레이는 간편하고 빠른 약물 전달이 가능하며, 위장관 부작용 위험을 낮출 수 있다는 장점이 있죠. '어비세덴' 비강 스프레이의 가장 큰 특징은 선택성과 특이성입니다. 수면 유도에 직접 관여하는 신경 회로에 정교하게 작용하여, 기존 수면제에 비해 우수한 수면 개선 효과를 보이면서도 과다 진정이나 인지 기능 저하 등의 부작용은 매우 적었습니다. 또한 '어비세덴'은 자연스러운 수면 리듬을 유도하여 수면의 질을 한층 높이는 데 기여합니다. 수면다원검사 상 서파수면이 유의하게 증가하고, 수면 효율과 숙면감이 개선되는 양상을 관찰할 수 있었죠. 비강 제형의 약물 안전성도 주목할 만합니다. 코 점막 자극을 최소화하는 처방 설계로 사용 편의성과 내약성이 우수하며, 장기 사용에도 내성이나 의존성 위험이 낮은 편입니다. 물론 약물 선택은 개인의 증상과 특성에 따라 신중히 이루어져야 합니다. 그러나 '어비세덴' 비강 스프레이는 기존 불면증 치료의 패러다임을 바꿀 대안으로서, 보다 효과적이고 안전한 수면 개선을 기대할 수 있는 제품이라 생각합니다. 특히 복용 순응도가 떨어지는 노인 환자나, 위장 질환이 동반된 분들에게 '어비세덴' 비강 스프레이를 우선 고려해볼 만합니다. 향후 장기적 예후와 삶의 질 개선 효과에 대한 연구도 지속되길 기대해봅니다. 건강한 수면은 삶의 기본이 되는 요소입니다. 수면 전문가로서 '어비세덴' 비강 스프레이가 불면증으로 고통받는 많은 분들의 수면 회복과 건강 증진에 기여할 수 있기를 진심으로 바랍니다.</p>
+ 				</div>
+			</div>
+			<div class="image-container">
+  				<img src="doc3.png" alt="doc3.png">
+  				<div class="overlay">
+    				<p class="text">안녕하세요, 정신건강의학과 전문의 오해나입니다.<br>저는 '어비세덴(Abysseden)' 비강 스프레이가 불면증 환자 진료에 새로운 돌파구가 될 것으로 기대하고 있습니다. 기존의 경구 수면제는 효과는 있지만 잔류 졸음, 어지러움, 기억력 감퇴 등의 부작용이 문제였는데요, '어비세덴' 비강 스프레이는 이러한 단점을 보완한 혁신적인 제품이라고 생각합니다. 먼저 비강 투여 방식이 주는 이점이 크죠. 코 점막을 통해 빠르게 흡수되어 효과가 신속하게 나타나고, 위장관을 거치지 않아 소화기계 부담을 줄일 수 있습니다. 또한 간편하게 휴대하고 사용할 수 있어서 환자 순응도를 높이는 데에도 도움이 됩니다. 하지만 무엇보다 주목할 점은 '어비세덴'만의 차별화된 작용 기전입니다. 해파리 유래 RFamide 펩티드가 수면-각성 주기 조절에 관여하는 신경 회로에 선택적으로 작용하여, 자연스러운 수면 유도 효과를 보이는 거죠. 실제 임상에서도 숙면감 개선, 깊은 수면 증가 등 의미 있는 변화를 관찰할 수 있었습니다. 약물의 안전성 측면에서도 고무적입니다. 비강 점막 자극이 적고 전신 부작용이 현저히 낮았으며, 장기 사용에도 내성이나 의존 위험이 낮다는 점에서 기존 수면제의 한계를 극복한 것으로 보입니다. 물론 모든 환자에게 똑같이 적용할 순 없겠지만, 저는 '어비세덴' 비강 스프레이가 불면증 표준 치료로 자리 잡을 가능성이 높다고 봅니다. 특히 약물 순응도가 관건인 노년층이나, 만성 불면증 환자의 삶의 질 개선에 크게 기여할 것으로 기대됩니다. 앞으로도 '어비세덴'의 장기 치료 효과와 안전성에 대한 연구가 지속적으로 이루어져, 보다 많은 불면증 환자들에게 도움이 되길 바랍니다. 숙면은 건강한 삶의 필수 요소니까요. 저는 수면 전문가로서 '어비세덴'이 가져올 변화에 큰 기대를 걸고 있습니다.</p>
+ 				</div>
+			</div>
+		</div>
+	</section>
+	<section class="wrap" style="height: 900px;">
+		<div style="padding-left: 500px;">
+			<div class="review">
+				<div class="menuflex" style="padding: 3%;">
+					<h3>최*호</h3>
+					<img class="close-b" src="close.png">
+				</div>
+				<div class="review-block">
+					<p class="zindex">Abysseden</p>
+				</div>
+				<p>안녕하세요, IT 업계에서 일하는 직장인입니다. 야근과 스트레스로 만성 불면에 시달리다가 '어비세덴' 비강 스프레이를 접하게 되었어요. 일단 휴대하기 간편해서 출장이 잦은 저에게 안성맞춤이에요. 호텔에서도 간단히 스프레이하고 쉽게 숙면을 취할 수 있거든요. 덕분에 장거리 비행 후에도 시차 적응이 빨라졌어요. 또 저는 알레르기 비염이 있어서 코 점막이 예민한 편인데, '어비세덴'은 전혀 자극이 없더라고요. 안전하게 장기간<br>사용할 수 있어서 더 믿음이 가요. 불면증 때문에 업무 능률이 떨어지는 분들에게 강력 추천합니다. '어비세덴' 덕분에 스트레스는 줄이고 업무 효율은 높일 수 있게 되었어요. 정말 삶의 질이 달라졌답니다!</p>
+			</div>
+		</div>
+		<div style="padding-left: 250px; padding-top: 270px;">
+			<div class="review">
+				<div class="menuflex" style="padding: 3%;">
+					<h3>이*주</h3>
+					<img class="close-b" src="close.png">
+				</div>
+				<div class="review-block">
+					<p class="zindex">Abysseden</p>
+				</div>
+				<p>저는 갱년기 증상으로 불면증이 심했던 주부입니다. 호르몬제나 수면제에 의존하고 싶지 않아서 고민하던 차에 '어비세덴' 비강 스프레이를 알게 되었어요. 처음에는 약물을 코로 투여하는 게 낯설었는데, 사용해보니 전혀 불편함이 없더라고요. 오히려 위에 부담이 없어서 더 좋았어요. 무엇보다 숙면을 취하고 나면 피부 건강까지 좋아지는 걸 느꼈답니다. 갱년기 증상으로 고민하는 친구들에게도 '어비세덴'을 적극 추천하고 있어요. 호르몬 균형을 맞추면서 숙면을 돕는 일석이조 효과가 있는 것 같아요.</p>
+			</div>
+		</div>
+		<div style="padding-top: 270px;">
+			<div class="review">
+				<div class="menuflex" style="padding: 3%;">
+					<h3>박*수</h3>
+					<img class="close-b" src="close.png">
+				</div>
+				<div class="review-block">
+					<p class="zindex">Abysseden</p>
+				</div>
+				<p>안녕하세요, 불면증으로 고생하던 대학생 입니다. 시험 스트레스로 잠을 이루지 못해 힘들었는데, '어비세덴' 비강 스프레이를 만난 후 정말 숙면을 취할 수 있게 되었어요. 사용법도 간단해서 좋아요. 잠들기 전에 코에 스프레이를 뿌리면 금세 졸음이 밀려와서 쉽게 잠에 들 수 있거든요. 아침에 일어나도 개운하고 두통 없이 상쾌해서 강의 집중력도 높아졌어요. 친구들에게도 '어비세덴'을 추천했는데, 다들 저처럼 수면의 질이 향상되었다고 하더라고요. 부작용 걱정 없이 건강한 숙면을 취할 수 있어서 정말 만족스러워요.</p>
+			</div>
+		</div>
+	</section>
+	<section class="wrap" style="background: white;" id="ddd">
+		<h2 style="color: #293CA4; padding-top: 10%">How to Use<br>Abysseden</h2>
+		<div class="notice" style="background: #293CA4;color:#FFBCAA;">
+			<h3 style="font-size: 32px;font-weight: 600;padding: 0px 0px 15px 0px;">01 | 사용시 주의사항</h3>
+			<p>- 본 제품은 의사의 처방에 의해 사용해야 하는 수면유도제입니다.<br>- 사용 전 반드시 첨부 설명서를 읽고 이해하시기 바랍니다.<br>- 다른 약물과의 상호작용 가능성이 있으므로, 복용 중인 약이 있다면 의사에게 알리십시오.</p>
+		</div>
+		<div class="notice" style="color:#FFBCAA;">
+			<h3 style="font-size: 32px;font-weight: 600;padding: 0px 0px 15px 0px;">02 | 사용방법</h3>
+			<p>1. 코를 깨끗이 풀어낸 후 사용하는 것이 좋습니다.<br>2. 스프레이를 용기에서 꺼내 수직으로 잡습니다.<br>3. 고개를 약간 숙이고, 스프레이 노즐을 코 끝에서 약 1cm 떨어뜨려 한쪽 콧구멍에 삽입합니다.<br>4. 반대쪽 콧구멍은 손가락으로 막습니다.<br>5. 스프레이를 눌러 약물을 분사하면서 동시에 숨을 들이쉽니다.<br>6. 같은 방법으로 반대쪽 콧구멍에도 사용합니다.<br>7. 사용 후에는 코를 풀지 말고 약 1분간 그대로 유지합니다.</p>
+		</div>
+		<div class="notice" style="background: #293CA4;color:#FFBCAA;">
+			<h3 style="font-size: 32px;font-weight: 600;padding: 0px 0px 15px 0px;">03 | 용량 및 사용 시기</h3>
+			<p>- 취침 전 30분 내에 1회 1푸쉬씩 양쪽 콧구멍에 사용합니다.<br>- 필요시 의사와 상담하여 1회 2푸쉬까지 늘릴 수 있으나, 절대 권장량을 초과하지 마십시오.<br>- 복용을 잊었더라도 다음 날 아침에 보충하지 말고 다음 취침 시간에 평소 용량을 사용하십시오.</p>
+		</div>
+		<div class="notice" style="color:#FFBCAA;">
+			<h3 style="font-size: 32px;font-weight: 600;padding: 0px 0px 15px 0px;">04 | 스프레이 관리법</h3>
+			<p>- 매 사용 후 노즐을 티슈로 닦아내고 뚜껑을 닫아 청결히 보관합니다.<br>- 노즐이 막힌 경우 뜨거운 물에 몇 분간 담가두었다가 완전히 말립니다.</p>
+		</div>
+		<div class="notice" style="background: #293CA4;color:#FFBCAA;">
+			<h3 style="font-size: 32px;font-weight: 600;padding: 0px 0px 15px 0px;">05 | 기타 주의사항</h3>
+			<p>- 어지러움, 두통 등의 부작용이 나타나면 의사와 상담하십시오.<br>- 임신 중이거나 수유 시에는 반드시 의사와 상담 후 사용하십시오.<br>- 어린이의 손이 닿지 않는 곳에 보관하십시오.</p>
+		</div>
+	</section>
+	<section class="wrap">
+		<h2 style="background: #FFBCAA;color: #293CA4;font-size: 36px;width: 180px;padding: 0px 5px;margin: 70px 0px 10px 242.5px;text-align: center;">Caution</h2>
+		<div style="width: 500px;height: 700px; border: 8px solid #FFBCAA;margin: auto;overflow: hidden;">
+			<div id="scrollingText" style="padding:2% 16%; position: relative; animation: scroll-up 60s linear infinite;">
+				<p>'어비세덴(Abysseden)' 비강 스프레이를 사용하실 때는 다음 사항을 주의하여 오남용을 방지하시기 바랍니다.<br><br>1. 의사가 처방한 용량과 횟수를 준수하십시오. 자의적으로 용량을 늘리거나 과도하게 자주 사용하지 마십시오.<br><br>2. 다른 수면제, 진정제, 항불안제 등을 함께 사용하지 마십시오. 중추신경 억제 효과가 과도하게 나타날 수 있습니다.<br><br>3. 음주 후에는 사용하지 마십시오. 호흡 저하, 과도한 진정 등 위험한 부작용이 발생할 수 있습니다.<br><br>4. '어비세덴'에 내성이 생기면 의사와 상의하여 적절한 대처를 하십시오. 용량을 늘리기보다는 다른 치료 방안을 고려해야 합니다.<br><br>5. 코 점막에 상처가 있거나 감염이 의심될 때는 사용을 중단하고 의사와 상담하십시오. 비강 내 약물 흡수에 영향을 줄 수 있습니다.<br><br>6. 과도한 졸음, 현기증, 집중력 저하 등이 나타나면 의사에게 알리고 운전이나 위험한 기계 조작을 피하십시오.<br><br>7. 우울증, 불안장애 등이 동반된 경우 '어비세덴' 단독으로 증상을 해결하려 하지 말고, 전문의와 상담하여 적절한 치료를 받으십시오.<br><br>8. 임신 중, 수유 중, 18세 미만 청소년은 의사와 상의 없이 사용하지 마십시오.<br><br>9. 비강 스프레이를 규칙적으로 깨끗이 관리하고, 다른 사람과 함께 사용하지 마십시오. 감염의 위험이 있습니다.<br><br>10. 장기간 사용 후 갑작스럽게 중단하면 반동성 불면, 리바운드 증상 등이 나타날 수 있으니 주의하십시오. 의사와 상담하여 서서히 감량하는 것이 좋습니다.<br><br>'어비세덴'은 불면증 치료에 도움을 줄 수 있는 처방약이지만, 오남용할 경우 오히려 건강을 해칠 수 있습니다. 의사의 지시에 따라 올바르고 안전하게 사용하시기 바랍니다. 기타 궁금한 사항은 의사나 약사와 상담하시기 바랍니다.</p>
+			</div>
+		</div>
+		<img src="LOGO.png" style="width: 200px; padding:30px 0px 0px 400px;">
+	</section>
+	<footer>
+		<div class="wrap menuflex">
+			<a href="#top">GO TO TOP</a>
+			<p>Abysseden&copy;2024 모든 권리 보유.</p>
+			<p>한혜원 raum_uni@naver.com</p>
+		</div>
+	</footer>
+</body>
+</html>
